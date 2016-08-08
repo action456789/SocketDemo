@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "GCDAsyncSocket.h"
 
-@interface ViewController()
+@interface ViewController()<GCDAsyncSocketDelegate>
 
 @property (weak) IBOutlet NSTextField *textField;
 

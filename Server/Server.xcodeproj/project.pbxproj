@@ -12,9 +12,7 @@
 		1067596D1D5855D600956128 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067596C1D5855D600956128 /* ViewController.m */; };
 		1067596F1D5855D600956128 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1067596E1D5855D600956128 /* Assets.xcassets */; };
 		106759721D5855D600956128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106759701D5855D600956128 /* Main.storyboard */; };
-		106759821D5855F200956128 /* Documentation.html in Resources */ = {isa = PBXBuildFile; fileRef = 1067597A1D5855F200956128 /* Documentation.html */; };
-		106759831D5855F200956128 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067597C1D5855F200956128 /* GCDAsyncSocket.m */; };
-		106759841D5855F200956128 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067597E1D5855F200956128 /* GCDAsyncUdpSocket.m */; };
+		77C163EECC990743B93824CB /* libPods-Server.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 671FE56245C19FB95D8A9971 /* libPods-Server.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,11 +25,9 @@
 		1067596E1D5855D600956128 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		106759711D5855D600956128 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		106759731D5855D600956128 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1067597A1D5855F200956128 /* Documentation.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Documentation.html; sourceTree = "<group>"; };
-		1067597B1D5855F200956128 /* GCDAsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncSocket.h; sourceTree = "<group>"; };
-		1067597C1D5855F200956128 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
-		1067597D1D5855F200956128 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
-		1067597E1D5855F200956128 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		671FE56245C19FB95D8A9971 /* libPods-Server.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Server.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		85C0318BADF889A9EC33DAE5 /* Pods-Server.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Server.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Server/Pods-Server.debug.xcconfig"; sourceTree = "<group>"; };
+		B105B83E9A5A1D3317631E07 /* Pods-Server.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Server.release.xcconfig"; path = "Pods/Target Support Files/Pods-Server/Pods-Server.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +35,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				77C163EECC990743B93824CB /* libPods-Server.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		05388B29C5A23372E1AA73F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				671FE56245C19FB95D8A9971 /* libPods-Server.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		106759591D5855D600956128 = {
 			isa = PBXGroup;
 			children = (
 				106759641D5855D600956128 /* Server */,
 				106759631D5855D600956128 /* Products */,
+				5C5448D1FE98C70B9B3205C2 /* Pods */,
+				05388B29C5A23372E1AA73F7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,7 +71,6 @@
 		106759641D5855D600956128 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				106759791D5855F200956128 /* GCDAsyncSocket */,
 				1067596B1D5855D600956128 /* ViewController.h */,
 				1067596C1D5855D600956128 /* ViewController.m */,
 				106759681D5855D600956128 /* Supporting Files */,
@@ -85,40 +91,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		106759791D5855F200956128 /* GCDAsyncSocket */ = {
+		5C5448D1FE98C70B9B3205C2 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1067597A1D5855F200956128 /* Documentation.html */,
-				1067597B1D5855F200956128 /* GCDAsyncSocket.h */,
-				1067597C1D5855F200956128 /* GCDAsyncSocket.m */,
-				1067597D1D5855F200956128 /* GCDAsyncUdpSocket.h */,
-				1067597E1D5855F200956128 /* GCDAsyncUdpSocket.m */,
-				1067597F1D5855F200956128 /* Vendor */,
+				85C0318BADF889A9EC33DAE5 /* Pods-Server.debug.xcconfig */,
+				B105B83E9A5A1D3317631E07 /* Pods-Server.release.xcconfig */,
 			);
-			path = GCDAsyncSocket;
-			sourceTree = "<group>";
-		};
-		1067597F1D5855F200956128 /* Vendor */ = {
-			isa = PBXGroup;
-			children = (
-				106759801D5855F200956128 /* CocoaLumberjack */,
-			);
-			path = Vendor;
-			sourceTree = "<group>";
-		};
-		106759801D5855F200956128 /* CocoaLumberjack */ = {
-			isa = PBXGroup;
-			children = (
-				106759811D5855F200956128 /* Extensions */,
-			);
-			path = CocoaLumberjack;
-			sourceTree = "<group>";
-		};
-		106759811D5855F200956128 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +107,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 106759761D5855D600956128 /* Build configuration list for PBXNativeTarget "Server" */;
 			buildPhases = (
+				9EA2F833BD3D83FF4F21D69A /* Check Pods Manifest.lock */,
 				1067595E1D5855D600956128 /* Sources */,
 				1067595F1D5855D600956128 /* Frameworks */,
 				106759601D5855D600956128 /* Resources */,
+				E2493DE15B11D69A59FCD87B /* Embed Pods Frameworks */,
+				6898250BA832876951C9EDAA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -179,20 +161,65 @@
 			buildActionMask = 2147483647;
 			files = (
 				1067596F1D5855D600956128 /* Assets.xcassets in Resources */,
-				106759821D5855F200956128 /* Documentation.html in Resources */,
 				106759721D5855D600956128 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6898250BA832876951C9EDAA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Server/Pods-Server-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EA2F833BD3D83FF4F21D69A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E2493DE15B11D69A59FCD87B /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Server/Pods-Server-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1067595E1D5855D600956128 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				106759831D5855F200956128 /* GCDAsyncSocket.m in Sources */,
-				106759841D5855F200956128 /* GCDAsyncUdpSocket.m in Sources */,
 				1067596D1D5855D600956128 /* ViewController.m in Sources */,
 				1067596A1D5855D600956128 /* main.m in Sources */,
 				106759671D5855D600956128 /* AppDelegate.m in Sources */,
@@ -296,6 +323,7 @@
 		};
 		106759771D5855D600956128 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85C0318BADF889A9EC33DAE5 /* Pods-Server.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -308,6 +336,7 @@
 		};
 		106759781D5855D600956128 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B105B83E9A5A1D3317631E07 /* Pods-Server.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -337,6 +366,7 @@
 				106759781D5855D600956128 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

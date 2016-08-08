@@ -1,0 +1,5 @@
+target 'Server' do
+pod 'CocoaAsyncSocket'  
+pod 'ProtocolBuffers', '~> 1.9.10'
+end
+
