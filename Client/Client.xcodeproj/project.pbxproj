@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1067598F1D588E3C00956128 /* Message.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067598D1D588E3C00956128 /* Message.pb.m */; };
+		106759901D588E3C00956128 /* Message.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1067598E1D588E3C00956128 /* Message.proto */; };
 		10B326AC1D2F38C400EE7ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326AB1D2F38C400EE7ACF /* main.m */; };
 		10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326AE1D2F38C500EE7ACF /* AppDelegate.m */; };
 		10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326B11D2F38C500EE7ACF /* ViewController.m */; };
@@ -17,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1067598C1D588E3C00956128 /* Message.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.pb.h; sourceTree = "<group>"; };
+		1067598D1D588E3C00956128 /* Message.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.pb.m; sourceTree = "<group>"; };
+		1067598E1D588E3C00956128 /* Message.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Message.proto; sourceTree = "<group>"; };
+		106759971D588E6600956128 /* MessageConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageConstant.h; sourceTree = "<group>"; };
 		10B326A71D2F38C400EE7ACF /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B326AB1D2F38C400EE7ACF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10B326AD1D2F38C500EE7ACF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -58,6 +64,18 @@
 			name = Other;
 			sourceTree = "<group>";
 		};
+		1067598B1D588E3C00956128 /* PhotoBufferHandle */ = {
+			isa = PBXGroup;
+			children = (
+				106759971D588E6600956128 /* MessageConstant.h */,
+				1067598C1D588E3C00956128 /* Message.pb.h */,
+				1067598D1D588E3C00956128 /* Message.pb.m */,
+				1067598E1D588E3C00956128 /* Message.proto */,
+			);
+			name = PhotoBufferHandle;
+			path = ../../PhotoBufferHandle;
+			sourceTree = "<group>";
+		};
 		10B3269E1D2F38C400EE7ACF = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +97,7 @@
 		10B326A91D2F38C400EE7ACF /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				1067598B1D588E3C00956128 /* PhotoBufferHandle */,
 				10B326B01D2F38C500EE7ACF /* ViewController.h */,
 				10B326B11D2F38C500EE7ACF /* ViewController.m */,
 				1067592C1D5487F100956128 /* Other */,
@@ -171,6 +190,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				106759901D588E3C00956128 /* Message.proto in Resources */,
 				10B326BA1D2F38C500EE7ACF /* LaunchScreen.storyboard in Resources */,
 				10B326B71D2F38C500EE7ACF /* Assets.xcassets in Resources */,
 				10B326B51D2F38C500EE7ACF /* Main.storyboard in Resources */,
@@ -232,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,
 				10B326AC1D2F38C400EE7ACF /* main.m in Sources */,

@@ -1,0 +1,9 @@
+message Message {
+    required int32  messageType = 1;
+    optional string messageId = 2;
+    optional string version = 3;
+    optional string header = 4;
+    optional string body = 5;
+}
+
+

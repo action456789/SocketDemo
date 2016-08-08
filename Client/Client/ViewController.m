@@ -8,13 +8,13 @@
 
 #import "ViewController.h"
 #import "GCDAsyncSocket.h"
+#import "Message.pb.h"
+#import "MessageConstant.h"
 
-#define USE_SECURE_CONNECTION 0
+#define kTcpTag 1
 
 @interface ViewController ()<GCDAsyncSocketDelegate>
-
 @property (weak, nonatomic) IBOutlet UITextView *textView;
-
 @end
 
 @implementation ViewController
@@ -58,9 +58,24 @@
 {
     NSString *str = @"客户端: 你爱我吗";
     NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-    [_socket writeData:data withTimeout:-1 tag:1];
+    [_socket writeData:data withTimeout:-1 tag:kTcpTag];
     
     [self addText:str];
+}
+
+- (void)sendHeatPackage
+{
+    MessageBuilder *builder = [Message builder];
+    builder.messageType = MSGTypeHeartBeat;
+    builder.messageId = MSGID_C2S_HEART_PACKAGE;
+    builder.version = KMessageVersion;
+    builder.header = @"";
+    builder.body = @"";
+    
+    Message *msg = [builder build];
+    
+    [_socket writeData:[msg data] withTimeout:-1 tag:kTcpTag];
+    [self addText:@"客户端: 心跳包"];
 }
 
 - (void)initSocket
@@ -89,11 +104,13 @@
     _heartBeatTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, _heartBeatQueue);
     dispatch_source_set_timer(_heartBeatTimer, dispatch_time(DISPATCH_TIME_NOW, delay), interval * NSEC_PER_SEC, 1.0 * NSEC_PER_SEC);
     dispatch_source_set_event_handler(_heartBeatTimer, ^{
-        NSData *msg = [@"heartBeat:Client" dataUsingEncoding:NSUTF8StringEncoding];
-        [_socket writeData:msg withTimeout:-1 tag:1];
+        [self sendHeatPackage];
     });
     dispatch_resume(_heartBeatTimer);
 }
+
+#pragma mark soket read & write
+
 
 #pragma mark Socket Delegate
 
