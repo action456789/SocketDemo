@@ -8,8 +8,9 @@
 
 #import "ViewController.h"
 #import "GCDAsyncSocket.h"
+
 #import "Message.pb.h"
-#import "MessageConstant.h"
+#import "MessageHandle.h"
 
 #define kTcpTag 1
 
@@ -37,6 +38,14 @@
     [self initSocket];
 }
 
+- (void)initSocket
+{
+    _port = 5555;
+    _ipAddr = @"127.0.0.1";
+    _socketQueue = dispatch_queue_create("com.kesen.client.tcp.socket", DISPATCH_QUEUE_SERIAL);
+    _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_socketQueue];
+}
+
 - (void)addText:(NSString *)text
 {
     dispatch_async(dispatch_get_main_queue(), ^{
@@ -56,35 +65,13 @@
 }
 - (IBAction)sendData:(UIButton *)sender
 {
-    NSString *str = @"客户端: 你爱我吗";
-    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
-    [_socket writeData:data withTimeout:-1 tag:kTcpTag];
+    Message *request = [MessageHandle buildPlayMedioRequestPackage];
+    [_socket writeData:request.data withTimeout:-1 tag:kTcpTag];
     
-    [self addText:str];
+    [self addText:request.body];
 }
 
-- (void)sendHeatPackage
-{
-    MessageBuilder *builder = [Message builder];
-    builder.messageType = MSGTypeHeartBeat;
-    builder.messageId = MSGID_C2S_HEART_PACKAGE;
-    builder.version = KMessageVersion;
-    builder.header = @"";
-    builder.body = @"";
-    
-    Message *msg = [builder build];
-    
-    [_socket writeData:[msg data] withTimeout:-1 tag:kTcpTag];
-    [self addText:@"客户端: 心跳包"];
-}
 
-- (void)initSocket
-{
-    _port = 5555;
-    _ipAddr = @"127.0.0.1";
-    _socketQueue = dispatch_queue_create("com.kesen.client.tcp.socket", DISPATCH_QUEUE_SERIAL);
-    _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_socketQueue];
-}
 
 - (void)startHeartBeat
 {
@@ -104,7 +91,9 @@
     _heartBeatTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, _heartBeatQueue);
     dispatch_source_set_timer(_heartBeatTimer, dispatch_time(DISPATCH_TIME_NOW, delay), interval * NSEC_PER_SEC, 1.0 * NSEC_PER_SEC);
     dispatch_source_set_event_handler(_heartBeatTimer, ^{
-        [self sendHeatPackage];
+        
+        Message *toServer = [MessageHandle buildHeatPackageC2S];
+        [_socket writeData:toServer.data withTimeout:-1 tag:kTcpTag];
     });
     dispatch_resume(_heartBeatTimer);
 }
@@ -137,8 +126,10 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [self addText:[NSString stringWithFormat:@"服务器: %@", msg]];
+    Message *message = [Message parseFromData:data];
+    if ([MessageHandle isHeatPackageS2C:message]) {
+        [self addText:@"Server: heart beat"];
+    }
     
     [sock readDataWithTimeout:-1 tag:tag];
 }

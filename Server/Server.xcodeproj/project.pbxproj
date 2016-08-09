@@ -14,6 +14,7 @@
 		106759721D5855D600956128 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 106759701D5855D600956128 /* Main.storyboard */; };
 		106759951D588E4E00956128 /* Message.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 106759931D588E4E00956128 /* Message.pb.m */; };
 		106759961D588E4E00956128 /* Message.proto in Resources */ = {isa = PBXBuildFile; fileRef = 106759941D588E4E00956128 /* Message.proto */; };
+		1067599E1D59719300956128 /* MessageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067599D1D59719300956128 /* MessageHandle.m */; };
 		77C163EECC990743B93824CB /* libPods-Server.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 671FE56245C19FB95D8A9971 /* libPods-Server.a */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +31,8 @@
 		106759921D588E4E00956128 /* Message.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.pb.h; sourceTree = "<group>"; };
 		106759931D588E4E00956128 /* Message.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.pb.m; sourceTree = "<group>"; };
 		106759941D588E4E00956128 /* Message.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Message.proto; sourceTree = "<group>"; };
-		106759981D588E7000956128 /* MessageConstant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageConstant.h; sourceTree = "<group>"; };
+		1067599C1D59719300956128 /* MessageHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandle.h; sourceTree = "<group>"; };
+		1067599D1D59719300956128 /* MessageHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageHandle.m; sourceTree = "<group>"; };
 		671FE56245C19FB95D8A9971 /* libPods-Server.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Server.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85C0318BADF889A9EC33DAE5 /* Pods-Server.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Server.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Server/Pods-Server.debug.xcconfig"; sourceTree = "<group>"; };
 		B105B83E9A5A1D3317631E07 /* Pods-Server.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Server.release.xcconfig"; path = "Pods/Target Support Files/Pods-Server/Pods-Server.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,10 +103,11 @@
 		106759911D588E4E00956128 /* PhotoBufferHandle */ = {
 			isa = PBXGroup;
 			children = (
-				106759981D588E7000956128 /* MessageConstant.h */,
 				106759921D588E4E00956128 /* Message.pb.h */,
 				106759931D588E4E00956128 /* Message.pb.m */,
 				106759941D588E4E00956128 /* Message.proto */,
+				1067599C1D59719300956128 /* MessageHandle.h */,
+				1067599D1D59719300956128 /* MessageHandle.m */,
 			);
 			name = PhotoBufferHandle;
 			path = ../../PhotoBufferHandle;
@@ -244,6 +247,7 @@
 				1067596D1D5855D600956128 /* ViewController.m in Sources */,
 				1067596A1D5855D600956128 /* main.m in Sources */,
 				106759671D5855D600956128 /* AppDelegate.m in Sources */,
+				1067599E1D59719300956128 /* MessageHandle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

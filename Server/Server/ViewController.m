@@ -9,6 +9,11 @@
 #import "ViewController.h"
 #import "GCDAsyncSocket.h"
 
+#import "Message.pb.h"
+#import "MessageHandle.h"
+
+#define kTcpTag 1
+
 @interface ViewController()<GCDAsyncSocketDelegate>
 
 @property (weak) IBOutlet NSTextField *textField;
@@ -65,6 +70,8 @@
     [_sessionSocket writeData:data withTimeout:-1 tag:1];
 }
 
+
+
 #pragma mark - GCDAsyncSocketDelegate
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
@@ -83,12 +90,17 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
-    NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [self addText:[NSString stringWithFormat:@"客户端: 收到消息: %@, %ld", msg, tag]];
-    
-    if ([msg containsString:@"heartBeat:Client"]) { // 心跳包
-        NSData *data = [@"heartBeat:Server" dataUsingEncoding:NSUTF8StringEncoding];
-        [sock writeData:data withTimeout:-1 tag:2];
+    Message *message = [Message parseFromData:data];
+    if ([MessageHandle isHeatPackageC2S:message]) {
+        [self addText:@"Client: heart beat"];
+        
+        Message *msgToClient = [MessageHandle buildHeatPackageS2C];
+        [_sessionSocket writeData:msgToClient.data withTimeout:-1 tag:kTcpTag];
+    } else if ([MessageHandle  isPlayMedioRequestPackage:message]) {
+        [self addText:message.body];
+        
+        Message *responst = [MessageHandle buildPlayMedioResponsePackage];
+        [_sessionSocket writeData:responst.data withTimeout:-1 tag:kTcpTag];
     }
     
     [sock readDataWithTimeout:-1 tag:tag];
