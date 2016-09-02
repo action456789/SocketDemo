@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1018595B1D797C79006929D1 /* NSDictionary+KS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1018595A1D797C79006929D1 /* NSDictionary+KS.m */; };
 		1067598F1D588E3C00956128 /* Message.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067598D1D588E3C00956128 /* Message.pb.m */; };
 		106759901D588E3C00956128 /* Message.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1067598E1D588E3C00956128 /* Message.proto */; };
 		1067599B1D59715400956128 /* MessageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067599A1D59715400956128 /* MessageHandle.m */; };
@@ -20,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		101859591D797C79006929D1 /* NSDictionary+KS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+KS.h"; sourceTree = "<group>"; };
+		1018595A1D797C79006929D1 /* NSDictionary+KS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KS.m"; sourceTree = "<group>"; };
 		1067598C1D588E3C00956128 /* Message.pb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.pb.h; sourceTree = "<group>"; };
 		1067598D1D588E3C00956128 /* Message.pb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.pb.m; sourceTree = "<group>"; };
 		1067598E1D588E3C00956128 /* Message.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Message.proto; sourceTree = "<group>"; };
@@ -52,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		101859581D797C79006929D1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				101859591D797C79006929D1 /* NSDictionary+KS.h */,
+				1018595A1D797C79006929D1 /* NSDictionary+KS.m */,
+			);
+			name = Category;
+			path = ../../Category;
+			sourceTree = "<group>";
+		};
 		1067592C1D5487F100956128 /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +113,7 @@
 		10B326A91D2F38C400EE7ACF /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				101859581D797C79006929D1 /* Category */,
 				1067598B1D588E3C00956128 /* PhotoBufferHandle */,
 				10B326B01D2F38C500EE7ACF /* ViewController.h */,
 				10B326B11D2F38C500EE7ACF /* ViewController.m */,
@@ -255,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1018595B1D797C79006929D1 /* NSDictionary+KS.m in Sources */,
 				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,

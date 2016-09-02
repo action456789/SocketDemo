@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1018595F1D797C7F006929D1 /* NSDictionary+KS.m in Sources */ = {isa = PBXBuildFile; fileRef = 1018595E1D797C7F006929D1 /* NSDictionary+KS.m */; };
 		106759671D5855D600956128 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 106759661D5855D600956128 /* AppDelegate.m */; };
 		1067596A1D5855D600956128 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 106759691D5855D600956128 /* main.m */; };
 		1067596D1D5855D600956128 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067596C1D5855D600956128 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1018595D1D797C7F006929D1 /* NSDictionary+KS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+KS.h"; sourceTree = "<group>"; };
+		1018595E1D797C7F006929D1 /* NSDictionary+KS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+KS.m"; sourceTree = "<group>"; };
 		106759621D5855D600956128 /* Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Server.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		106759651D5855D600956128 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		106759661D5855D600956128 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -58,6 +61,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		1018595C1D797C7F006929D1 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				1018595D1D797C7F006929D1 /* NSDictionary+KS.h */,
+				1018595E1D797C7F006929D1 /* NSDictionary+KS.m */,
+			);
+			name = Category;
+			path = ../../Category;
+			sourceTree = "<group>";
+		};
 		106759591D5855D600956128 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +92,7 @@
 		106759641D5855D600956128 /* Server */ = {
 			isa = PBXGroup;
 			children = (
+				1018595C1D797C7F006929D1 /* Category */,
 				106759911D588E4E00956128 /* PhotoBufferHandle */,
 				1067596B1D5855D600956128 /* ViewController.h */,
 				1067596C1D5855D600956128 /* ViewController.m */,
@@ -243,6 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1018595F1D797C7F006929D1 /* NSDictionary+KS.m in Sources */,
 				106759951D588E4E00956128 /* Message.pb.m in Sources */,
 				1067596D1D5855D600956128 /* ViewController.m in Sources */,
 				1067596A1D5855D600956128 /* main.m in Sources */,

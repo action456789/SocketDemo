@@ -7,31 +7,24 @@
 //
 
 #import "MessageHandle.h"
+#import "NSDictionary+KS.h"
+
+#define kValidate(str) (str && ![str isEqualToString:@""])
 
 @implementation MessageHandle
 
-+ (Message *)buildHeatPackageS2C
++ (Message *)buildHeatPackageWithAccount:(NSString *)account
 {
     MessageBuilder *builder = [Message builder];
     builder.messageType = MSGTypeHeartBeat;
-    builder.messageId = MSGID_S2C_HEART_PACKAGE;
+    builder.messageId = [self createMessageId];
     builder.version = KMessageVersion;
     builder.header = @"";
-    builder.body = @"";
     
-    Message *msg = [builder build];
-    
-    return msg;
-}
-
-+ (Message *)buildHeatPackageC2S
-{
-    MessageBuilder *builder = [Message builder];
-    builder.messageType = MSGTypeHeartBeat;
-    builder.messageId = MSGID_C2S_HEART_PACKAGE;
-    builder.version = KMessageVersion;
-    builder.header = @"";
-    builder.body = @"";
+    if (kValidate(account)) {
+        NSDictionary *dict = @{@"account": account};
+        builder.body = [dict ks_jsonString];
+    }
     
     Message *msg = [builder build];
     
@@ -41,49 +34,34 @@
 + (Message *)buildPlayMedioRequestPackage
 {
     MessageBuilder *builder = [Message builder];
-    builder.messageType = MSGTypeControl;
-    builder.messageId = MSGID_C2S_PLAY_MEDIA_SYN;
+    builder.messageType = MSGTypePlayMedioRequest;
+    builder.messageId = [self createMessageId];
     builder.version = KMessageVersion;
-    builder.header = @"CMD";
-    builder.body = @"PLAY_MEDIA";
+    builder.header = @"";
     
     Message *msg = [builder build];
     
     return msg;
 }
 
-+ (Message *)buildPlayMedioResponsePackage
++ (Message *)buildPlayMedioResponsePackage:(NSDictionary *)dict
 {
     MessageBuilder *builder = [Message builder];
-    builder.messageType = MSGTypeControl;
-    builder.messageId = MSGID_S2C_PLAY_MEDIA_ACK;
+    builder.messageType = MSGTypePlayMedioResponse;
+    builder.messageId = [self createMessageId];
     builder.version = KMessageVersion;
-    builder.header = @"CMD";
-    builder.body = @"PLAY_MEDIA";
+    builder.header = @"";
+    builder.body = [dict ks_jsonString];
     
     Message *msg = [builder build];
     
     return msg;
 }
 
-+ (BOOL)isHeatPackageC2S:(Message *)msg
++ (NSString *)createMessageId
 {
-    return msg && msg.messageType == MSGTypeHeartBeat && [msg.messageId isEqualToString:MSGID_C2S_HEART_PACKAGE];
-}
-
-+ (BOOL)isHeatPackageS2C:(Message *)msg
-{
-    return msg && msg.messageType == MSGTypeHeartBeat && [msg.messageId isEqualToString:MSGID_S2C_HEART_PACKAGE];
-}
-
-+ (BOOL)isPlayMedioRequestPackage:(Message *)msg
-{
-    return msg && msg.messageType == MSGTypeControl && [msg.messageId isEqualToString:MSGID_C2S_PLAY_MEDIA_SYN];
-}
-
-+ (BOOL)isPlayMedioResponsePackage:(Message *)msg
-{
-    return msg && msg.messageType == MSGTypeControl && [msg.messageId isEqualToString:MSGID_S2C_PLAY_MEDIA_ACK];
+    NSString *timestampString = [NSString stringWithFormat:@"%.0f",  [[NSDate date] timeIntervalSince1970]*1000];
+    return [NSString stringWithFormat:@"%@%d%d%d", timestampString, arc4random_uniform(10), arc4random_uniform(10), arc4random_uniform(10)];
 }
 
 @end

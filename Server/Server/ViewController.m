@@ -12,9 +12,14 @@
 #import "Message.pb.h"
 #import "MessageHandle.h"
 
+#import "NSDictionary+KS.h"
+
 #define kTcpTag 1
 
 @interface ViewController()<GCDAsyncSocketDelegate>
+{
+    NSString *_loginAccount;
+}
 
 @property (weak) IBOutlet NSTextField *textField;
 
@@ -70,8 +75,6 @@
     [_sessionSocket writeData:data withTimeout:-1 tag:1];
 }
 
-
-
 #pragma mark - GCDAsyncSocketDelegate
 - (void)socket:(GCDAsyncSocket *)sock didAcceptNewSocket:(GCDAsyncSocket *)newSocket
 {
@@ -90,20 +93,38 @@
 
 - (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag
 {
+    [sock readDataWithTimeout:-1 tag:tag];
+    
     Message *message = [Message parseFromData:data];
-    if ([MessageHandle isHeatPackageC2S:message]) {
-        [self addText:@"Client: heart beat"];
-        
-        Message *msgToClient = [MessageHandle buildHeatPackageS2C];
-        [_sessionSocket writeData:msgToClient.data withTimeout:-1 tag:kTcpTag];
-    } else if ([MessageHandle  isPlayMedioRequestPackage:message]) {
-        [self addText:message.body];
-        
-        Message *responst = [MessageHandle buildPlayMedioResponsePackage];
-        [_sessionSocket writeData:responst.data withTimeout:-1 tag:kTcpTag];
+    [self responseMessage:message];
+}
+
+- (void)responseMessage:(Message *)msg
+{
+    Message *responseMsg = nil;
+    
+    switch (msg.messageType) {
+        case MSGTypeHeartBeat: {
+            NSDictionary *dict = [NSDictionary ks_dictionaryFromString:msg.body];
+            _loginAccount = dict[@"account"];
+            [self addText:[NSString stringWithFormat:@"receive heart beat %@", _loginAccount]];
+            
+            responseMsg = [MessageHandle buildHeatPackageWithAccount:nil];
+            break;
+        }
+            
+        case MSGTypePlayMedioRequest: {
+            [self addText:@"play medio"];
+            NSDictionary *dict = @{@"success":@(YES)};
+            responseMsg = [MessageHandle buildPlayMedioResponsePackage:dict];
+            break;
+        }
+            
+        default:
+            break;
     }
     
-    [sock readDataWithTimeout:-1 tag:tag];
+    [_sessionSocket writeData:responseMsg.data withTimeout:-1 tag:kTcpTag];
 }
 
 
