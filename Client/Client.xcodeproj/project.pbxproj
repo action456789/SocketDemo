@@ -11,6 +11,8 @@
 		1067598F1D588E3C00956128 /* Message.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067598D1D588E3C00956128 /* Message.pb.m */; };
 		106759901D588E3C00956128 /* Message.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1067598E1D588E3C00956128 /* Message.proto */; };
 		1067599B1D59715400956128 /* MessageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067599A1D59715400956128 /* MessageHandle.m */; };
+		1097CDDD1D910995006E6A3A /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1097CDDC1D910995006E6A3A /* GCDTimer.m */; };
+		1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1097CDDF1D91100D006E6A3A /* TCPConnectHandle.m */; };
 		10B326AC1D2F38C400EE7ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326AB1D2F38C400EE7ACF /* main.m */; };
 		10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326AE1D2F38C500EE7ACF /* AppDelegate.m */; };
 		10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326B11D2F38C500EE7ACF /* ViewController.m */; };
@@ -28,6 +30,11 @@
 		1067598E1D588E3C00956128 /* Message.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Message.proto; sourceTree = "<group>"; };
 		106759991D59715400956128 /* MessageHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandle.h; sourceTree = "<group>"; };
 		1067599A1D59715400956128 /* MessageHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageHandle.m; sourceTree = "<group>"; };
+		1097CDDB1D910995006E6A3A /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
+		1097CDDC1D910995006E6A3A /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
+		1097CDDE1D91100D006E6A3A /* TCPConnectHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPConnectHandle.h; sourceTree = "<group>"; };
+		1097CDDF1D91100D006E6A3A /* TCPConnectHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPConnectHandle.m; sourceTree = "<group>"; };
+		1097CDE11D911056006E6A3A /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
 		10B326A71D2F38C400EE7ACF /* Client.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Client.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10B326AB1D2F38C400EE7ACF /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		10B326AD1D2F38C500EE7ACF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -92,6 +99,16 @@
 			path = ../../PhotoBufferHandle;
 			sourceTree = "<group>";
 		};
+		1097CDDA1D91098F006E6A3A /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				1097CDE11D911056006E6A3A /* Singleton.h */,
+				1097CDDB1D910995006E6A3A /* GCDTimer.h */,
+				1097CDDC1D910995006E6A3A /* GCDTimer.m */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		10B3269E1D2F38C400EE7ACF = {
 			isa = PBXGroup;
 			children = (
@@ -113,8 +130,11 @@
 		10B326A91D2F38C400EE7ACF /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				1097CDDA1D91098F006E6A3A /* Utils */,
 				101859581D797C79006929D1 /* Category */,
 				1067598B1D588E3C00956128 /* PhotoBufferHandle */,
+				1097CDDE1D91100D006E6A3A /* TCPConnectHandle.h */,
+				1097CDDF1D91100D006E6A3A /* TCPConnectHandle.m */,
 				10B326B01D2F38C500EE7ACF /* ViewController.h */,
 				10B326B11D2F38C500EE7ACF /* ViewController.m */,
 				1067592C1D5487F100956128 /* Other */,
@@ -181,6 +201,7 @@
 				TargetAttributes = {
 					10B326A61D2F38C400EE7ACF = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 33UJTTK2KL;
 					};
 				};
 			};
@@ -271,8 +292,10 @@
 			files = (
 				1018595B1D797C79006929D1 /* NSDictionary+KS.m in Sources */,
 				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
+				1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,
+				1097CDDD1D910995006E6A3A /* GCDTimer.m in Sources */,
 				10B326AC1D2F38C400EE7ACF /* main.m in Sources */,
 				1067599B1D59715400956128 /* MessageHandle.m in Sources */,
 			);
@@ -387,7 +410,9 @@
 			baseConfigurationReference = 70879A9B2EBD8144705EE8F5 /* Pods-Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 33UJTTK2KL;
 				INFOPLIST_FILE = Client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SenKe.Client;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -399,7 +424,9 @@
 			baseConfigurationReference = 8B1813ACE65CD89C99E57486 /* Pods-Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 33UJTTK2KL;
 				INFOPLIST_FILE = Client/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.SenKe.Client;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'A035D7E3BD87F7FF0169DD9B'
-               BlueprintName = 'CocoaAsyncSocket'
+               BlueprintIdentifier = 'ABD648A91DD122B9CEE01333'
+               BlueprintName = 'KVOController'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libCocoaAsyncSocket.a'>
+               BuildableName = 'libKVOController.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

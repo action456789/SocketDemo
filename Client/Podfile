@@ -1,5 +1,6 @@
 target 'Client' do
 pod 'CocoaAsyncSocket'  
 pod 'ProtocolBuffers', '~> 1.9.10'
+pod 'KVOController', '~> 1.1.0'
 end
 

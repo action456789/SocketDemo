@@ -17,9 +17,6 @@
 #define kTcpTag 1
 
 @interface ViewController()<GCDAsyncSocketDelegate>
-{
-    NSString *_loginAccount;
-}
 
 @property (weak) IBOutlet NSTextField *textField;
 
@@ -36,6 +33,8 @@
     dispatch_queue_t _sessionQueue;
     
     dispatch_source_t _recevieDataTimer;
+    
+    NSString *_loginAccount;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -73,6 +72,11 @@
 {
     NSData *data = [@"服务器: 你好" dataUsingEncoding:NSUTF8StringEncoding];
     [_sessionSocket writeData:data withTimeout:-1 tag:1];
+}
+
+- (IBAction)cleanTextField:(id)sender
+{
+    self.textField.stringValue = @"";
 }
 
 #pragma mark - GCDAsyncSocketDelegate
