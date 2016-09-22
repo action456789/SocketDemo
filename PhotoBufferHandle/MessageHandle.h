@@ -11,13 +11,14 @@
 
 typedef NS_ENUM(NSUInteger, MSGType) {
     MSGTypeHeartBeat = 1000,
-    MSGTypeChart,
     MSGTypeControl,
     
     MSGTypeConnectSuccess = 2000,
     
     MSGTypePlayMedioRequest = 3001,
     MSGTypePlayMedioResponse,
+    
+    MSGTypeString = 4000,
 };
 typedef NS_ENUM(NSUInteger, MSGID) {
     MSGIDHeartBeat = 1000,
@@ -34,6 +35,8 @@ typedef NS_ENUM(NSUInteger, MSGID) {
 
 + (Message *)buildPlayMedioRequestPackage;
 + (Message *)buildPlayMedioResponsePackage:(NSDictionary *)dict;
+
++ (Message *)buildString:(NSString *)string;
 
 + (NSString *)createMessageId;
 

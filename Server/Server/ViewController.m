@@ -70,8 +70,8 @@
 
 - (IBAction)sendData:(NSButton *)sender
 {
-    NSData *data = [@"服务器: 你好" dataUsingEncoding:NSUTF8StringEncoding];
-    [_sessionSocket writeData:data withTimeout:-1 tag:1];
+    Message *message = [MessageHandle buildString:@"你好，我是服务器"];
+    [_sessionSocket writeData:message.data withTimeout:-1 tag:1];
 }
 
 - (IBAction)cleanTextField:(id)sender

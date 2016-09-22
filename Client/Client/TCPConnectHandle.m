@@ -38,7 +38,7 @@ dispatch_semaphore_signal(_lock);
     
     NSInteger _reconnectCount;
 
-    GCDTimer *_timeoutTime;
+    GCDTimer *_timeoutTimer;
     
     PlayMedioResultBlock _playMedioResult;
 }
@@ -101,14 +101,14 @@ singleton_implementation(TCPConnectHandle);
         Message *heartPackage = [MessageHandle buildHeatPackageWithAccount:@"18811112222"];
         [_socket writeData:heartPackage.data withTimeout:-1 tag:kTcpTag];
         
-        if (_timeoutTime == nil) {
-            _timeoutTime = [GCDTimer scheduledTimerWithTimeInterval:10 queue:_heartBeatQueue repeats:NO delay:30 accuracy:GCDTimerAccuracyNormal block:^{
+        if (_timeoutTimer == nil) {
+            _timeoutTimer = [GCDTimer scheduledTimerWithTimeInterval:10 queue:_heartBeatQueue repeats:NO delay:30 accuracy:GCDTimerAccuracyNormal block:^{
                 // 心跳包超时
                 
                 NSLog(@"已断开连接");
                 
                 [[NSNotificationCenter defaultCenter] postNotificationName:kDisconnectedNotification object:nil];
-                [_timeoutTime invalidate];
+                [_timeoutTimer invalidate];
             }];
         }
     }];
@@ -161,8 +161,8 @@ singleton_implementation(TCPConnectHandle);
     switch (msg.messageType) {
         case MSGTypeHeartBeat: {// 心跳
             NSLog(@"recieve: heart beat");
-            [_timeoutTime invalidate];
-            _timeoutTime = nil;
+            [_timeoutTimer invalidate];
+            _timeoutTimer = nil;
             break;
         }
             
@@ -173,6 +173,10 @@ singleton_implementation(TCPConnectHandle);
             }
             
             break;
+        }
+            
+        case MSGTypeString: {
+            NSLog(@"收到字符串消息:%@", msg.header);
         }
             
         default:

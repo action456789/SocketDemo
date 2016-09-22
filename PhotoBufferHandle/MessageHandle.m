@@ -58,6 +58,19 @@
     return msg;
 }
 
++ (Message *)buildString:(NSString *)string
+{
+    MessageBuilder *builder = [Message builder];
+    builder.messageType = MSGTypeString;
+    builder.messageId = [self createMessageId];
+    builder.version = KMessageVersion;
+    builder.header = string;
+    
+    Message *msg = [builder build];
+    
+    return msg;
+}
+
 + (NSString *)createMessageId
 {
     NSString *timestampString = [NSString stringWithFormat:@"%.0f",  [[NSDate date] timeIntervalSince1970]*1000];
