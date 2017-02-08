@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "TCPConnectHandle.h"
+#import "ConnectSocketService.h"
 
 @interface ViewController ()
 
@@ -17,10 +18,16 @@
 
 @end
 
-@implementation ViewController
+@implementation ViewController {
+    ConnectSocketService *_connectService;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        _connectService = [[ConnectSocketService alloc] init];
+        [_connectService connectSocket];
+    });
 }
 
 

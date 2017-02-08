@@ -51,6 +51,12 @@ singleton_implementation(TCPConnectHandle);
     if (self) {
         [self initSocket];
         _reconnectCount = 0;
+        
+        [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
+            if (_socket) {
+                NSLog(@"%d", _socket.isConnected);
+            }
+        }];
     }
     return self;
 }
@@ -58,8 +64,8 @@ singleton_implementation(TCPConnectHandle);
 - (void)initSocket
 {
     _port = 5555;
-//    _ipAddr = @"127.0.0.1";
-    _ipAddr = @"192.168.2.1";
+    _ipAddr = @"127.0.0.1";
+//    _ipAddr = @"192.168.2.1";
     _socketQueue = dispatch_queue_create("com.kesen.client.tcp.socket", DISPATCH_QUEUE_SERIAL);
     _socket = [[GCDAsyncSocket alloc] initWithDelegate:self delegateQueue:_socketQueue];
 }
@@ -185,6 +191,5 @@ singleton_implementation(TCPConnectHandle);
     
     [_socket writeData:responseMsg.data withTimeout:-1 tag:kTcpTag];
 }
-
 
 @end
