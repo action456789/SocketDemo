@@ -9,8 +9,14 @@
 #import "ConnectSocketService.h"
 #import <GCDAsyncSocket.h>
 
-#define kRetryCount 3
+#define kRetryCount 30
 #define kConnectTimeout 10
+
+//typedef NS_ENUM(NSUInteger, ConnectType) {
+//    ConnectTypeConnect, // 主动连接, default value
+//    ConnectTypeReconnect, // 连接失败，重连
+//    ConnectTypeOfflineReconnect, // 连接成功后，断线重连
+//};
 
 @interface ConnectSocketService() <GCDAsyncSocketDelegate>
 
@@ -25,6 +31,8 @@
     dispatch_semaphore_t _socketWriteSemaphore;
     
     NSUInteger _reconnectCount;
+    
+    NSOperationQueue *_currentOprationQueue;
 }
 
 - (instancetype)init
@@ -43,6 +51,8 @@
 }
 
 - (BOOL)connectSocket {
+    _currentOprationQueue = [NSOperationQueue currentQueue];
+    
     if (![self connect] && ![self reconnect]) {
         return NO;
     }
@@ -65,7 +75,6 @@
 }
 
 - (BOOL)reconnect {
-    
     if (_socket.isConnected) {return YES;}
     _reconnectCount = 0;
     
@@ -97,7 +106,7 @@
     
     NSLog(@"L O N G: connectSocket success: address=%@", _ipAddr);
     
-    _reconnectCount = 0;
+    _reconnectCount = -1;
     
     [sock readDataWithTimeout:-1 tag:0];
 }
@@ -112,6 +121,16 @@
     [self clean];
     
     dispatch_semaphore_signal(_socketWriteSemaphore);
+    
+    if (_reconnectCount == -1) { // 掉线
+        if (self.delegate && [self.delegate respondsToSelector:@selector(connectSocketOffline)]) {
+            [self.delegate connectSocketOffline];
+        }
+        
+        [_currentOprationQueue addOperationWithBlock:^{ // 重连
+            [self reconnect];
+        }];
+    }
 }
 
 @end

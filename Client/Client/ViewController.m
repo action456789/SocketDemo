@@ -12,7 +12,7 @@
 #import "TCPConnectHandle.h"
 #import "ConnectSocketService.h"
 
-@interface ViewController ()
+@interface ViewController () <ConnectSocketServiceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
@@ -24,10 +24,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        _connectService = [[ConnectSocketService alloc] init];
-        [_connectService connectSocket];
-    });
+    _connectService = [[ConnectSocketService alloc] init];
+    _connectService.delegate = self;
+    [_connectService connectSocket];
 }
 
 
@@ -49,8 +48,5 @@
         [self addText:[NSString stringWithFormat:@"play medio - [成功],  %d", [resultDict[@"success"] boolValue]]];
     }];
 }
-
-
-
 
 @end

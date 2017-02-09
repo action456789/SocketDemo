@@ -7,8 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+@class ConnectSocketService;
+
+@protocol ConnectSocketServiceDelegate <NSObject>
+@optional;
+- (void)connectSocketOffline;
+@end
 
 @interface ConnectSocketService : NSObject
+
+@property (nonatomic,weak) id <ConnectSocketServiceDelegate> delegate;
 
 - (BOOL)connectSocket;
 

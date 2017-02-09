@@ -38,8 +38,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    [self initSocket];
 }
 
 - (void)addText:(NSString *)text
@@ -59,6 +57,8 @@
 
 - (IBAction)listen:(NSButtonCell *)sender
 {
+    [self initSocket];
+    
     NSError *error = nil;
     BOOL result = [_listenSocket acceptOnPort:_port error:&error];
     if (result) {
@@ -66,6 +66,14 @@
     } else {
         [self addText:@"服务器: 创建监听socket:失败"];
     }
+}
+
+- (IBAction)closeSocket:(id)sender {
+    [_listenSocket disconnect];
+    _listenSocket = nil;
+    
+    [_sessionSocket disconnect];
+    _sessionSocket = nil;
 }
 
 - (IBAction)sendData:(NSButton *)sender
