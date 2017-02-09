@@ -6,27 +6,19 @@
 //  Copyright © 2017年 SenKe. All rights reserved.
 //
 
-#import "ConnectSocketService.h"
-#import <GCDAsyncSocket.h>
+#import "KKConnectSocketService.h"
 
 #define kRetryCount 30
 #define kConnectTimeout 10
 
-//typedef NS_ENUM(NSUInteger, ConnectType) {
-//    ConnectTypeConnect, // 主动连接, default value
-//    ConnectTypeReconnect, // 连接失败，重连
-//    ConnectTypeOfflineReconnect, // 连接成功后，断线重连
-//};
-
-@interface ConnectSocketService() <GCDAsyncSocketDelegate>
+@interface KKConnectSocketService() <GCDAsyncSocketDelegate>
 
 @end
 
-@implementation ConnectSocketService {
+@implementation KKConnectSocketService {
     NSString *_ipAddr;
     int _port;
     
-    GCDAsyncSocket  *_socket;
     dispatch_queue_t _socketQueue;
     dispatch_semaphore_t _socketWriteSemaphore;
     

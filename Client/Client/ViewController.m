@@ -10,21 +10,21 @@
 
 #import "ViewController.h"
 #import "TCPConnectHandle.h"
-#import "ConnectSocketService.h"
+#import "KKConnectSocketService.h"
 
-@interface ViewController () <ConnectSocketServiceDelegate>
+@interface ViewController () <KKConnectSocketServiceDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
 @implementation ViewController {
-    ConnectSocketService *_connectService;
+    KKConnectSocketService *_connectService;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _connectService = [[ConnectSocketService alloc] init];
+    _connectService = [[KKConnectSocketService alloc] init];
     _connectService.delegate = self;
     [_connectService connectSocket];
 }

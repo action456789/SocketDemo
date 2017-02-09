@@ -19,8 +19,11 @@
 		10B326B51D2F38C500EE7ACF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B326B31D2F38C500EE7ACF /* Main.storyboard */; };
 		10B326B71D2F38C500EE7ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B326B61D2F38C500EE7ACF /* Assets.xcassets */; };
 		10B326BA1D2F38C500EE7ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B326B81D2F38C500EE7ACF /* LaunchScreen.storyboard */; };
-		2EFA90691E4AAF3A00B55D07 /* ConnectSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA90681E4AAF3A00B55D07 /* ConnectSocketService.m */; };
-		2EFA906C1E4AB4E900B55D07 /* HeartBeatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EFA906B1E4AB4E900B55D07 /* HeartBeatService.m */; };
+		2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */; };
+		2E15E79F1E4C2521005DBAF6 /* HeartBeatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E79C1E4C2521005DBAF6 /* HeartBeatService.m */; };
+		2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */; };
+		2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */; };
+		2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */; };
 		D42C23A23CF5F4CB5ABDB8E6 /* libPods-Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */; };
 /* End PBXBuildFile section */
 
@@ -47,10 +50,16 @@
 		10B326B61D2F38C500EE7ACF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		10B326B91D2F38C500EE7ACF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		10B326BB1D2F38C500EE7ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2EFA90671E4AAF3A00B55D07 /* ConnectSocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectSocketService.h; sourceTree = "<group>"; };
-		2EFA90681E4AAF3A00B55D07 /* ConnectSocketService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectSocketService.m; sourceTree = "<group>"; };
-		2EFA906A1E4AB4E900B55D07 /* HeartBeatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartBeatService.h; sourceTree = "<group>"; };
-		2EFA906B1E4AB4E900B55D07 /* HeartBeatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartBeatService.m; sourceTree = "<group>"; };
+		2E15E7991E4C2521005DBAF6 /* KKConnectSocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKConnectSocketService.h; sourceTree = "<group>"; };
+		2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKConnectSocketService.m; sourceTree = "<group>"; };
+		2E15E79B1E4C2521005DBAF6 /* HeartBeatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartBeatService.h; sourceTree = "<group>"; };
+		2E15E79C1E4C2521005DBAF6 /* HeartBeatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartBeatService.m; sourceTree = "<group>"; };
+		2E15E7A31E4C36FD005DBAF6 /* KK_ThreadSafeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KK_ThreadSafeArray.h; sourceTree = "<group>"; };
+		2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KK_ThreadSafeArray.m; sourceTree = "<group>"; };
+		2E15E7A61E4C38DB005DBAF6 /* KKMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMessageManager.h; sourceTree = "<group>"; };
+		2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMessageManager.m; sourceTree = "<group>"; };
+		2E15E7A91E4C3972005DBAF6 /* KKMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMsg.h; sourceTree = "<group>"; };
+		2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMsg.m; sourceTree = "<group>"; };
 		70879A9B2EBD8144705EE8F5 /* Pods-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.debug.xcconfig"; sourceTree = "<group>"; };
 		8B1813ACE65CD89C99E57486 /* Pods-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.release.xcconfig"; sourceTree = "<group>"; };
 		B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +117,8 @@
 		1097CDDA1D91098F006E6A3A /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				2E15E7A31E4C36FD005DBAF6 /* KK_ThreadSafeArray.h */,
+				2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */,
 				1097CDE11D911056006E6A3A /* Singleton.h */,
 				1097CDDB1D910995006E6A3A /* GCDTimer.h */,
 				1097CDDC1D910995006E6A3A /* GCDTimer.m */,
@@ -136,15 +147,12 @@
 		10B326A91D2F38C400EE7ACF /* Client */ = {
 			isa = PBXGroup;
 			children = (
+				2E15E7971E4C2521005DBAF6 /* Core */,
 				1097CDDA1D91098F006E6A3A /* Utils */,
 				101859581D797C79006929D1 /* Category */,
 				1067598B1D588E3C00956128 /* PhotoBufferHandle */,
 				1097CDDE1D91100D006E6A3A /* TCPConnectHandle.h */,
 				1097CDDF1D91100D006E6A3A /* TCPConnectHandle.m */,
-				2EFA90671E4AAF3A00B55D07 /* ConnectSocketService.h */,
-				2EFA90681E4AAF3A00B55D07 /* ConnectSocketService.m */,
-				2EFA906A1E4AB4E900B55D07 /* HeartBeatService.h */,
-				2EFA906B1E4AB4E900B55D07 /* HeartBeatService.m */,
 				10B326B01D2F38C500EE7ACF /* ViewController.h */,
 				10B326B11D2F38C500EE7ACF /* ViewController.m */,
 				1067592C1D5487F100956128 /* Other */,
@@ -166,6 +174,37 @@
 				B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2E15E7971E4C2521005DBAF6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				2E15E79D1E4C2521005DBAF6 /* MsgSender */,
+				2E15E7981E4C2521005DBAF6 /* ConnectManager */,
+				2E15E79B1E4C2521005DBAF6 /* HeartBeatService.h */,
+				2E15E79C1E4C2521005DBAF6 /* HeartBeatService.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		2E15E7981E4C2521005DBAF6 /* ConnectManager */ = {
+			isa = PBXGroup;
+			children = (
+				2E15E7991E4C2521005DBAF6 /* KKConnectSocketService.h */,
+				2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */,
+			);
+			path = ConnectManager;
+			sourceTree = "<group>";
+		};
+		2E15E79D1E4C2521005DBAF6 /* MsgSender */ = {
+			isa = PBXGroup;
+			children = (
+				2E15E7A61E4C38DB005DBAF6 /* KKMessageManager.h */,
+				2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */,
+				2E15E7A91E4C3972005DBAF6 /* KKMsg.h */,
+				2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */,
+			);
+			path = MsgSender;
 			sourceTree = "<group>";
 		};
 		59E49C541387117CDC6E5072 /* Pods */ = {
@@ -302,13 +341,16 @@
 			files = (
 				1018595B1D797C79006929D1 /* NSDictionary+KS.m in Sources */,
 				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
+				2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */,
 				1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,
+				2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */,
+				2E15E79F1E4C2521005DBAF6 /* HeartBeatService.m in Sources */,
+				2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */,
+				2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */,
 				1097CDDD1D910995006E6A3A /* GCDTimer.m in Sources */,
-				2EFA906C1E4AB4E900B55D07 /* HeartBeatService.m in Sources */,
 				10B326AC1D2F38C400EE7ACF /* main.m in Sources */,
-				2EFA90691E4AAF3A00B55D07 /* ConnectSocketService.m in Sources */,
 				1067599B1D59715400956128 /* MessageHandle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
