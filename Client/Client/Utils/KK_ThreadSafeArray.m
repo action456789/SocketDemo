@@ -84,14 +84,18 @@ dispatch_semaphore_signal(_lock);
 
 // 出队
 - (id)pop {
-    dispatch_semaphore_wait(_lock, DISPATCH_TIME_FOREVER);
-    
-    id object = [_array lastObject];
-    [_array removeLastObject];
-    
-    dispatch_semaphore_signal(_lock);
-    
-    return object;
+    if (_array.count > 0) {
+        dispatch_semaphore_wait(_lock, DISPATCH_TIME_FOREVER);
+        
+        id object = [_array lastObject];
+        [_array removeLastObject];
+        
+        dispatch_semaphore_signal(_lock);
+        
+        return object;
+    } else {
+        return nil;
+    }
 }
 
 #pragma mark - 实现下标操作
@@ -105,7 +109,7 @@ dispatch_semaphore_signal(_lock);
 
 #pragma mark - getter
 
-- (NSInteger)count {
+- (NSUInteger)count {
     LOCK(NSUInteger count = _array.count);
     return count;
 }

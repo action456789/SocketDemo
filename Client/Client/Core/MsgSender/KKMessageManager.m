@@ -7,18 +7,33 @@
 //
 
 #import "KKMessageManager.h"
+#import "KKMsg.h"
+#import "KK_ThreadSafeArray.h"
 
 #import "Message.pb.h"
 #import "MessageHandle.h"
 
-@implementation KKMessageManager
-//
-//- (void)sendPlayMedioRequestWithReslut:(MsgResutl)result
-//{
-//    _playMedioResult = result;
-//    
-//    Message *request = [MessageHandle buildPlayMedioRequestPackage];
-//    [_socket writeData:request.data withTimeout:-1 tag:kTcpTag];
-//}
+@implementation KKMessageManager {
+    KK_ThreadSafeArray *_queue;
+}
+
+- (instancetype)init {
+    if (self = [super init]) {
+        _queue = [KK_ThreadSafeArray array];
+    }
+    
+    return self;
+}
+
+- (void)enqueueMsg:(KKMsg *)msg {
+    [_queue push:msg];
+}
+
+- (void)dispatchMsg:(KKMsg *)msg {
+    KKMsg *message = (KKMsg *)[_queue pop];
+    if (message) {
+        
+    }
+}
 
 @end

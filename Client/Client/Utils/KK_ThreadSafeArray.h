@@ -10,6 +10,8 @@
 
 @interface KK_ThreadSafeArray : NSObject <NSFastEnumeration>
 
+@property (readonly) NSUInteger count;
+
 + (instancetype)array;
 
 - (instancetype)initWithArray:(NSMutableArray *)otherArray;
