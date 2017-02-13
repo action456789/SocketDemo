@@ -99,6 +99,7 @@ dispatch_semaphore_signal(_lock);
 }
 
 #pragma mark - 实现下标操作
+
 - (id)objectAtIndexedSubscript:(NSUInteger)idx {
     LOCK(id object = _array[idx]);
     return object;
@@ -117,7 +118,8 @@ dispatch_semaphore_signal(_lock);
 /**
  @discussion 要有 for in 表达式的功能，必须要实现 NSFastEnumeration 协议
  */
-#pragma mark - NSFastEnumeration delegate
+#pragma mark - NSFastEnumeration protocal
+
 - (NSUInteger)countByEnumeratingWithState:(NSFastEnumerationState *)state objects:(id __unsafe_unretained [])buffer count:(NSUInteger)len {
     LOCK(NSInteger count = [_array countByEnumeratingWithState:state objects:buffer count:len]);
     return count;

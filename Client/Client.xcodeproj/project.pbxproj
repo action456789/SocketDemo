@@ -24,6 +24,7 @@
 		2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */; };
 		2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */; };
 		2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */; };
+		2E942C161E4EB99200B15BCA /* KK_ThreadSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */; };
 		D42C23A23CF5F4CB5ABDB8E6 /* libPods-Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,8 @@
 		2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMessageManager.m; sourceTree = "<group>"; };
 		2E15E7A91E4C3972005DBAF6 /* KKMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMsg.h; sourceTree = "<group>"; };
 		2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMsg.m; sourceTree = "<group>"; };
+		2E942C141E4EB99200B15BCA /* KK_ThreadSafeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KK_ThreadSafeDictionary.h; sourceTree = "<group>"; };
+		2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KK_ThreadSafeDictionary.m; sourceTree = "<group>"; };
 		70879A9B2EBD8144705EE8F5 /* Pods-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.debug.xcconfig"; sourceTree = "<group>"; };
 		8B1813ACE65CD89C99E57486 /* Pods-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.release.xcconfig"; sourceTree = "<group>"; };
 		B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -119,6 +122,8 @@
 			children = (
 				2E15E7A31E4C36FD005DBAF6 /* KK_ThreadSafeArray.h */,
 				2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */,
+				2E942C141E4EB99200B15BCA /* KK_ThreadSafeDictionary.h */,
+				2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */,
 				1097CDE11D911056006E6A3A /* Singleton.h */,
 				1097CDDB1D910995006E6A3A /* GCDTimer.h */,
 				1097CDDC1D910995006E6A3A /* GCDTimer.m */,
@@ -343,6 +348,7 @@
 				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
 				2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */,
 				1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */,
+				2E942C161E4EB99200B15BCA /* KK_ThreadSafeDictionary.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,
 				2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */,
