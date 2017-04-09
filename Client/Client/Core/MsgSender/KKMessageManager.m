@@ -9,31 +9,53 @@
 #import "KKMessageManager.h"
 #import "KKMsg.h"
 #import "KK_ThreadSafeArray.h"
+#import "KK_ThreadSafeDictionary.h"
 
-#import "Message.pb.h"
-#import "MessageHandle.h"
+@interface KKMessageManager()
+
+@end
 
 @implementation KKMessageManager {
-    KK_ThreadSafeArray *_queue;
-}
-
-- (instancetype)init {
-    if (self = [super init]) {
-        _queue = [KK_ThreadSafeArray array];
-    }
+    GCDAsyncSocket *_socket;
     
-    return self;
+    KK_ThreadSafeArray *_msgQueue;
+    KK_ThreadSafeDictionary *_hasBeenSendMsgDict;
 }
 
-- (void)enqueueMsg:(KKMsg *)msg {
-    [_queue push:msg];
+singleton_implementation(KKMessageManager)
+
+- (instancetype)init
+{
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super init];
+        if (_instance) {
+            _msgQueue = [KK_ThreadSafeArray array];
+            _hasBeenSendMsgDict = [KK_ThreadSafeDictionary dictionary];
+        }
+    });
+    return _instance;
 }
 
-- (void)dispatchMsg:(KKMsg *)msg {
-    KKMsg *message = (KKMsg *)[_queue pop];
-    if (message) {
-        
-    }
+- (void)configureSocket:(GCDAsyncSocket *)socket {
+    _socket = socket;
+}
+
+- (void)enqueueMessage:(KKMsg *)msg {
+    [_msgQueue push:msg];
+}
+
+- (void)dispatchMessage:(KKMsg *)msg {
+    // TODO: HTTP message
+    
+    [self sendSocketMessage:msg];
+}
+
+- (void)sendSocketMessage:(KKMsg *)msg {
+    [_socket writeData:msg.msgBody.data withTimeout:-1 tag:1];
+    
+    // 放入字典
+    [_hasBeenSendMsgDict setObject:msg forKey:msg.msgId];
 }
 
 @end

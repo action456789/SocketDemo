@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <GCDAsyncSocket.h>
+#import "Singleton.h"
 
 @interface KKMessageManager : NSObject
+
+singleton_interface(KKMessageManager)
+
+- (void)configureSocket:(GCDAsyncSocket *)socket;
 
 @end

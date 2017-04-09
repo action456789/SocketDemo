@@ -1,7 +1,5 @@
 PODS:
-  - CocoaAsyncSocket (7.5.0):
-    - CocoaAsyncSocket/GCD (= 7.5.0)
-  - CocoaAsyncSocket/GCD (7.5.0)
+  - CocoaAsyncSocket (7.6.0)
   - KVOController (1.1.0)
   - ProtocolBuffers (1.9.11)
 
@@ -11,8 +9,10 @@ DEPENDENCIES:
   - ProtocolBuffers (~> 1.9.10)
 
 SPEC CHECKSUMS:
-  CocoaAsyncSocket: 3baeb1ddd969f81cf9fca81053ae49ef2d1cbbfa
+  CocoaAsyncSocket: b9d5589f07baf9de8f34cc25abd4fcba28f13805
   KVOController: 321b5fc59300fcaabd42c0f679baa7a27efbb2fd
   ProtocolBuffers: d509225eb2ea43d9582a59e94348fcf86e2abd65
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 10e2bad968fa0f0a59d77641152b5ca06676ff77
+
+COCOAPODS: 1.1.1

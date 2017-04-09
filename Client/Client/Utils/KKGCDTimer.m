@@ -6,16 +6,16 @@
 //  Copyright © 2016 SenKe. All rights reserved.
 //
 
-#import "GCDTimer.h"
+#import "KKGCDTimer.h"
 
-@interface GCDTimer()
+@interface KKGCDTimer()
 
 @property (nonatomic, assign) dispatch_source_t timer;
 @property (nonatomic, assign) BOOL isClear;
 
 @end
 
-@implementation GCDTimer
+@implementation KKGCDTimer
 
 + (instancetype)scheduledTimerWithTimeInterval:(NSTimeInterval)ti
                                          queue:(dispatch_queue_t)queue
@@ -24,20 +24,13 @@
                                       accuracy:(GCDTimerAccuracy)accuracy
                                          block:(void (^)())block
 {
-    GCDTimer *gcdTimer = [GCDTimer new];
+    KKGCDTimer *gcdTimer = [KKGCDTimer new];
     gcdTimer.isClear = NO;
     
-    NSTimeInterval leeway = 0.f;
-    if (accuracy == GCDTimerAccuracyBest) {
-        leeway = 0.f;
-    } else if (accuracy == GCDTimerAccuracyGood) {
-        leeway = 1.f;
-    } else if (accuracy == GCDTimerAccuracyNormal) {
-        leeway = 5.f;
-    }
+    NSTimeInterval leeway = accuracy;
     
     dispatch_source_t timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, queue);
-    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0.f), ti * NSEC_PER_SEC, 0 * NSEC_PER_SEC);
+    dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0.f), ti * NSEC_PER_SEC, leeway * NSEC_PER_SEC);
     dispatch_source_set_event_handler(timer, ^{
         block();
         if (isRepeats == NO) {

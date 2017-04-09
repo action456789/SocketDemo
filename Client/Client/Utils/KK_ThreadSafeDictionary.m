@@ -27,6 +27,11 @@ dispatch_semaphore_signal(_lock);
     return self;
 }
 
++ (instancetype)dictionary {
+    KK_ThreadSafeDictionary *dict = [[KK_ThreadSafeDictionary alloc] init];
+    return dict;
+}
+
 #pragma mark - method
 
 - (NSUInteger)count {

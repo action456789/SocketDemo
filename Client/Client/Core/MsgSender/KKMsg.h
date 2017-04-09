@@ -11,11 +11,22 @@
 
 typedef void (^Result)(NSDictionary *resultDict);
 
+typedef NS_ENUM(NSUInteger, KKMsgType) {
+    KKMsgTypeHeartbeart,
+    KKMsgTypeCommand,
+};
+
 @interface KKMsg : NSObject
 
-@property (nonatomic, assign) Result result; // 响应回调
+@property (nonatomic, copy) Result callback; // 响应回调
 @property (nonatomic, copy) NSString *msgId; // 消息id
 @property (nonatomic, assign) NSTimeInterval sendTimestamp; // 发送时间戳
 @property (nonatomic, strong) Message *msgBody;
+@property (nonatomic, assign) KKMsgType msgType;
+
+- (instancetype)initWithMessage:(Message *)message;
+
++ (instancetype)buildHeartbeartMsg;
+
 
 @end

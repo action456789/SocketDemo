@@ -11,7 +11,7 @@
 		1067598F1D588E3C00956128 /* Message.pb.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067598D1D588E3C00956128 /* Message.pb.m */; };
 		106759901D588E3C00956128 /* Message.proto in Resources */ = {isa = PBXBuildFile; fileRef = 1067598E1D588E3C00956128 /* Message.proto */; };
 		1067599B1D59715400956128 /* MessageHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1067599A1D59715400956128 /* MessageHandle.m */; };
-		1097CDDD1D910995006E6A3A /* GCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1097CDDC1D910995006E6A3A /* GCDTimer.m */; };
+		1097CDDD1D910995006E6A3A /* KKGCDTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 1097CDDC1D910995006E6A3A /* KKGCDTimer.m */; };
 		1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 1097CDDF1D91100D006E6A3A /* TCPConnectHandle.m */; };
 		10B326AC1D2F38C400EE7ACF /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326AB1D2F38C400EE7ACF /* main.m */; };
 		10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B326AE1D2F38C500EE7ACF /* AppDelegate.m */; };
@@ -20,12 +20,13 @@
 		10B326B71D2F38C500EE7ACF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10B326B61D2F38C500EE7ACF /* Assets.xcassets */; };
 		10B326BA1D2F38C500EE7ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B326B81D2F38C500EE7ACF /* LaunchScreen.storyboard */; };
 		2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */; };
-		2E15E79F1E4C2521005DBAF6 /* HeartBeatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E79C1E4C2521005DBAF6 /* HeartBeatService.m */; };
 		2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */; };
 		2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */; };
 		2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */; };
 		2E942C161E4EB99200B15BCA /* KK_ThreadSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */; };
-		D42C23A23CF5F4CB5ABDB8E6 /* libPods-Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */; };
+		6B3276D954E00708901EC431 /* libPods-Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361BDD564BEF00567B370E2 /* libPods-Client.a */; };
+		81C439AB1E979F11003487D1 /* KKHeartBeatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C439AA1E979F11003487D1 /* KKHeartBeatService.m */; };
+		81C439AF1E97AA0B003487D1 /* KKMsgMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C439AE1E97AA0B003487D1 /* KKMsgMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,8 +37,8 @@
 		1067598E1D588E3C00956128 /* Message.proto */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Message.proto; sourceTree = "<group>"; };
 		106759991D59715400956128 /* MessageHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageHandle.h; sourceTree = "<group>"; };
 		1067599A1D59715400956128 /* MessageHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageHandle.m; sourceTree = "<group>"; };
-		1097CDDB1D910995006E6A3A /* GCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTimer.h; sourceTree = "<group>"; };
-		1097CDDC1D910995006E6A3A /* GCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTimer.m; sourceTree = "<group>"; };
+		1097CDDB1D910995006E6A3A /* KKGCDTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKGCDTimer.h; sourceTree = "<group>"; };
+		1097CDDC1D910995006E6A3A /* KKGCDTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKGCDTimer.m; sourceTree = "<group>"; };
 		1097CDDE1D91100D006E6A3A /* TCPConnectHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TCPConnectHandle.h; sourceTree = "<group>"; };
 		1097CDDF1D91100D006E6A3A /* TCPConnectHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TCPConnectHandle.m; sourceTree = "<group>"; };
 		1097CDE11D911056006E6A3A /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
@@ -53,8 +54,6 @@
 		10B326BB1D2F38C500EE7ACF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E15E7991E4C2521005DBAF6 /* KKConnectSocketService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKConnectSocketService.h; sourceTree = "<group>"; };
 		2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKConnectSocketService.m; sourceTree = "<group>"; };
-		2E15E79B1E4C2521005DBAF6 /* HeartBeatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartBeatService.h; sourceTree = "<group>"; };
-		2E15E79C1E4C2521005DBAF6 /* HeartBeatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartBeatService.m; sourceTree = "<group>"; };
 		2E15E7A31E4C36FD005DBAF6 /* KK_ThreadSafeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KK_ThreadSafeArray.h; sourceTree = "<group>"; };
 		2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KK_ThreadSafeArray.m; sourceTree = "<group>"; };
 		2E15E7A61E4C38DB005DBAF6 /* KKMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMessageManager.h; sourceTree = "<group>"; };
@@ -63,9 +62,13 @@
 		2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMsg.m; sourceTree = "<group>"; };
 		2E942C141E4EB99200B15BCA /* KK_ThreadSafeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KK_ThreadSafeDictionary.h; sourceTree = "<group>"; };
 		2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KK_ThreadSafeDictionary.m; sourceTree = "<group>"; };
-		70879A9B2EBD8144705EE8F5 /* Pods-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.debug.xcconfig"; sourceTree = "<group>"; };
-		8B1813ACE65CD89C99E57486 /* Pods-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.release.xcconfig"; sourceTree = "<group>"; };
-		B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3361BDD564BEF00567B370E2 /* libPods-Client.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Client.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60860B24AFF369A898403CD6 /* Pods-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.release.xcconfig"; sourceTree = "<group>"; };
+		81C439A91E979F11003487D1 /* KKHeartBeatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKHeartBeatService.h; sourceTree = "<group>"; };
+		81C439AA1E979F11003487D1 /* KKHeartBeatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKHeartBeatService.m; sourceTree = "<group>"; };
+		81C439AD1E97AA0B003487D1 /* KKMsgMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMsgMonitor.h; sourceTree = "<group>"; };
+		81C439AE1E97AA0B003487D1 /* KKMsgMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMsgMonitor.m; sourceTree = "<group>"; };
+		B98D6A9392547D73FFEF65EB /* Pods-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,7 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D42C23A23CF5F4CB5ABDB8E6 /* libPods-Client.a in Frameworks */,
+				6B3276D954E00708901EC431 /* libPods-Client.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,8 +128,8 @@
 				2E942C141E4EB99200B15BCA /* KK_ThreadSafeDictionary.h */,
 				2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */,
 				1097CDE11D911056006E6A3A /* Singleton.h */,
-				1097CDDB1D910995006E6A3A /* GCDTimer.h */,
-				1097CDDC1D910995006E6A3A /* GCDTimer.m */,
+				1097CDDB1D910995006E6A3A /* KKGCDTimer.h */,
+				1097CDDC1D910995006E6A3A /* KKGCDTimer.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -136,8 +139,8 @@
 			children = (
 				10B326A91D2F38C400EE7ACF /* Client */,
 				10B326A81D2F38C400EE7ACF /* Products */,
-				59E49C541387117CDC6E5072 /* Pods */,
-				1CD6D8AA319620B306F9DA96 /* Frameworks */,
+				28F36D2D947C813D9786143E /* Pods */,
+				97839C4D5743979860AAFA9C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,21 +176,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1CD6D8AA319620B306F9DA96 /* Frameworks */ = {
+		28F36D2D947C813D9786143E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B21F00AF0731EDDC9CE8FE14 /* libPods-Client.a */,
+				B98D6A9392547D73FFEF65EB /* Pods-Client.debug.xcconfig */,
+				60860B24AFF369A898403CD6 /* Pods-Client.release.xcconfig */,
 			);
-			name = Frameworks;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		2E15E7971E4C2521005DBAF6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				81C439AC1E97AA00003487D1 /* MsgMonitor */,
 				2E15E79D1E4C2521005DBAF6 /* MsgSender */,
 				2E15E7981E4C2521005DBAF6 /* ConnectManager */,
-				2E15E79B1E4C2521005DBAF6 /* HeartBeatService.h */,
-				2E15E79C1E4C2521005DBAF6 /* HeartBeatService.m */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -195,6 +198,8 @@
 		2E15E7981E4C2521005DBAF6 /* ConnectManager */ = {
 			isa = PBXGroup;
 			children = (
+				81C439A91E979F11003487D1 /* KKHeartBeatService.h */,
+				81C439AA1E979F11003487D1 /* KKHeartBeatService.m */,
 				2E15E7991E4C2521005DBAF6 /* KKConnectSocketService.h */,
 				2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */,
 			);
@@ -212,13 +217,21 @@
 			path = MsgSender;
 			sourceTree = "<group>";
 		};
-		59E49C541387117CDC6E5072 /* Pods */ = {
+		81C439AC1E97AA00003487D1 /* MsgMonitor */ = {
 			isa = PBXGroup;
 			children = (
-				70879A9B2EBD8144705EE8F5 /* Pods-Client.debug.xcconfig */,
-				8B1813ACE65CD89C99E57486 /* Pods-Client.release.xcconfig */,
+				81C439AD1E97AA0B003487D1 /* KKMsgMonitor.h */,
+				81C439AE1E97AA0B003487D1 /* KKMsgMonitor.m */,
 			);
-			name = Pods;
+			path = MsgMonitor;
+			sourceTree = "<group>";
+		};
+		97839C4D5743979860AAFA9C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3361BDD564BEF00567B370E2 /* libPods-Client.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,12 +241,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 10B326BE1D2F38C500EE7ACF /* Build configuration list for PBXNativeTarget "Client" */;
 			buildPhases = (
-				4DD646C1774E021436F8990D /* Check Pods Manifest.lock */,
+				2574505147E44802C79D0DE9 /* [CP] Check Pods Manifest.lock */,
 				10B326A31D2F38C400EE7ACF /* Sources */,
 				10B326A41D2F38C400EE7ACF /* Frameworks */,
 				10B326A51D2F38C400EE7ACF /* Resources */,
-				000F24C69039DD3DEBD74AC4 /* Embed Pods Frameworks */,
-				1B92C6624E90C18E30F40113 /* Copy Pods Resources */,
+				D33A6167B10A3CC9767D5761 /* [CP] Embed Pods Frameworks */,
+				044C9E0812412D807B7383FA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -292,29 +305,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		000F24C69039DD3DEBD74AC4 /* Embed Pods Frameworks */ = {
+		044C9E0812412D807B7383FA /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Client/Pods-Client-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		1B92C6624E90C18E30F40113 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,19 +320,34 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Client/Pods-Client-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4DD646C1774E021436F8990D /* Check Pods Manifest.lock */ = {
+		2574505147E44802C79D0DE9 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D33A6167B10A3CC9767D5761 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Client/Pods-Client-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -348,14 +361,15 @@
 				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
 				2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */,
 				1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */,
+				81C439AF1E97AA0B003487D1 /* KKMsgMonitor.m in Sources */,
 				2E942C161E4EB99200B15BCA /* KK_ThreadSafeDictionary.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,
 				2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */,
-				2E15E79F1E4C2521005DBAF6 /* HeartBeatService.m in Sources */,
+				81C439AB1E979F11003487D1 /* KKHeartBeatService.m in Sources */,
 				2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */,
 				2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */,
-				1097CDDD1D910995006E6A3A /* GCDTimer.m in Sources */,
+				1097CDDD1D910995006E6A3A /* KKGCDTimer.m in Sources */,
 				10B326AC1D2F38C400EE7ACF /* main.m in Sources */,
 				1067599B1D59715400956128 /* MessageHandle.m in Sources */,
 			);
@@ -467,7 +481,7 @@
 		};
 		10B326BF1D2F38C500EE7ACF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70879A9B2EBD8144705EE8F5 /* Pods-Client.debug.xcconfig */;
+			baseConfigurationReference = B98D6A9392547D73FFEF65EB /* Pods-Client.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 33UJTTK2KL;
@@ -481,7 +495,7 @@
 		};
 		10B326C01D2F38C500EE7ACF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8B1813ACE65CD89C99E57486 /* Pods-Client.release.xcconfig */;
+			baseConfigurationReference = 60860B24AFF369A898403CD6 /* Pods-Client.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 33UJTTK2KL;

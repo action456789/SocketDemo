@@ -12,7 +12,10 @@
 
 @property (readonly) NSUInteger count;
 
++ (instancetype)dictionary;
+
 - (id)objectForKey:(id)aKey;
+- (void)setObject:(id)anObject forKey:(id <NSCopying> )aKey;
 - (void)removeObjectsForKeys:(NSArray *)keyArray;
 
 /// 下标访问

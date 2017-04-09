@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "TCPConnectHandle.h"
 #import "KKConnectSocketService.h"
+#import "KKHeartBeatService.h"
 
 @interface ViewController () <KKConnectSocketServiceDelegate>
 
@@ -26,7 +27,10 @@
     [super viewDidLoad];
     _connectService = [[KKConnectSocketService alloc] init];
     _connectService.delegate = self;
-    [_connectService connectSocket];
+    if ([_connectService connectSocket]) {
+        KKHeartBeatService *heartBeatService = [KKHeartBeatService new];
+        [heartBeatService start];
+    }
 }
 
 

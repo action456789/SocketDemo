@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '87B7D9AA8E9D41EFE36CBC28'
+               BlueprintIdentifier = '0CB0B821B8D3C154642DD644C4D95642'
                BlueprintName = 'ProtocolBuffers'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'libProtocolBuffers.a'>

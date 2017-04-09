@@ -8,6 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@interface HeartBeatService : NSObject
+#define kTcpTag 1
+
+@interface KKHeartBeatService : NSObject
+
+- (void)start;
 
 @end

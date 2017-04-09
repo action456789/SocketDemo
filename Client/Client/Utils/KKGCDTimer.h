@@ -9,12 +9,12 @@
 #import <Foundation/Foundation.h>
 
 typedef NS_ENUM(NSUInteger, GCDTimerAccuracy) {
-    GCDTimerAccuracyBest, // default
-    GCDTimerAccuracyGood,
-    GCDTimerAccuracyNormal,
+    GCDTimerAccuracyBest = 0, // default
+    GCDTimerAccuracyGood = 1,
+    GCDTimerAccuracyNormal = 5,
 };
 
-@interface GCDTimer : NSObject
+@interface KKGCDTimer : NSObject
 
 @property (nonatomic, assign) GCDTimerAccuracy accuracy;
 

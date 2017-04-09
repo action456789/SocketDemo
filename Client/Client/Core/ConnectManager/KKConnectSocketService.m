@@ -7,6 +7,7 @@
 //
 
 #import "KKConnectSocketService.h"
+#import "KKGCDTimer.h"
 
 #define kRetryCount 30
 #define kConnectTimeout 10
@@ -25,6 +26,7 @@
     NSUInteger _reconnectCount;
     
     NSOperationQueue *_currentOprationQueue;
+    
 }
 
 - (instancetype)init
@@ -76,6 +78,7 @@
         
         [self connect];
         sleep(1);
+        
         if (_socket.isConnected) {
             return YES;
         }

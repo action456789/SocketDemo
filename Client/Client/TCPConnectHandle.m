@@ -13,7 +13,7 @@
 #import "MessageHandle.h"
 
 #import "NSDictionary+KS.h"
-#import "GCDTimer.h"
+#import "KKGCDTimer.h"
 
 #define kTcpTag 1
 
@@ -33,12 +33,12 @@ dispatch_semaphore_signal(_lock);
     GCDAsyncSocket  *_socket;
     dispatch_queue_t _socketQueue;
     
-    GCDTimer *_heartBeatTimer;
+    KKGCDTimer *_heartBeatTimer;
     dispatch_queue_t _heartBeatQueue;
     
     NSInteger _reconnectCount;
 
-    GCDTimer *_timeoutTimer;
+    KKGCDTimer *_timeoutTimer;
     
     PlayMedioResultBlock _playMedioResult;
 }
@@ -103,12 +103,12 @@ singleton_implementation(TCPConnectHandle);
     if (!_heartBeatQueue) {
         _heartBeatQueue = dispatch_queue_create("com.kesen.client.tcp.socket.heart_beat", DISPATCH_QUEUE_SERIAL);
     }
-    _heartBeatTimer = [GCDTimer scheduledTimerWithTimeInterval:5.0 queue:_heartBeatQueue repeats:YES delay:0 accuracy:GCDTimerAccuracyNormal block:^{
+    _heartBeatTimer = [KKGCDTimer scheduledTimerWithTimeInterval:5.0 queue:_heartBeatQueue repeats:YES delay:0 accuracy:GCDTimerAccuracyNormal block:^{
         Message *heartPackage = [MessageHandle buildHeatPackageWithAccount:@"18811112222"];
         [_socket writeData:heartPackage.data withTimeout:-1 tag:kTcpTag];
         
         if (_timeoutTimer == nil) {
-            _timeoutTimer = [GCDTimer scheduledTimerWithTimeInterval:10 queue:_heartBeatQueue repeats:NO delay:30 accuracy:GCDTimerAccuracyNormal block:^{
+            _timeoutTimer = [KKGCDTimer scheduledTimerWithTimeInterval:10 queue:_heartBeatQueue repeats:NO delay:30 accuracy:GCDTimerAccuracyNormal block:^{
                 // 心跳包超时
                 
                 NSLog(@"已断开连接");
