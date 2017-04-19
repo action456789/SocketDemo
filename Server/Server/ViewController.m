@@ -108,27 +108,27 @@
     [sock readDataWithTimeout:-1 tag:tag];
     
     Message *message = [Message parseFromData:data];
+    
     [self responseMessage:message];
 }
 
-- (void)responseMessage:(Message *)msg
+- (void)responseMessage:(Message *)message
 {
     Message *responseMsg = nil;
     
-    switch (msg.messageType) {
+    switch (message.messageType) {
         case MSGTypeHeartBeat: {
-            NSDictionary *dict = [NSDictionary ks_dictionaryFromString:msg.body];
+            NSDictionary *dict = [NSDictionary ks_dictionaryFromString:message.body];
             _loginAccount = dict[@"account"];
             [self addText:[NSString stringWithFormat:@"receive heart beat %@", _loginAccount]];
-            
-            responseMsg = [MessageHandle buildHeatPackageWithAccount:nil];
+            responseMsg = [MessageHandle buildHeatPackageResponseWithAcount:_loginAccount msgId:message.messageId];
             break;
         }
             
         case MSGTypePlayMedioRequest: {
             [self addText:@"play medio"];
             NSDictionary *dict = @{@"success":@(YES)};
-            responseMsg = [MessageHandle buildPlayMedioResponsePackage:dict];
+            responseMsg = [MessageHandle buildPlayMedioResponsePackage:dict msgId:message.messageId];
             break;
         }
             

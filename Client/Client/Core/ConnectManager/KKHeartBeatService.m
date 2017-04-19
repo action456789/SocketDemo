@@ -8,58 +8,43 @@
 
 #import "KKHeartBeatService.h"
 #import "KKConnectSocketService.h"
-#import <GCDAsyncSocket.h>
 #import "KKGCDTimer.h"
 
 #import "Message.pb.h"
 #import "MessageHandle.h"
+#import "KKMessageService.h"
+#import "NSDictionary+KS.h"
 
-@interface KKHeartBeatService()<GCDAsyncSocketDelegate>
+@interface KKHeartBeatService()
 
 @end
 
 @implementation KKHeartBeatService {
-    KKConnectSocketService *_connectService;
-    
     KKGCDTimer *_heartBeatTimer;
-    dispatch_queue_t _heartBeatQueue;
 }
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        _connectService = [KKConnectSocketService new];
-    }
-    return self;
-}
+singleton_implementation(KKHeartBeatService)
 
 - (void)start {
-    [_connectService connectSocket];
-    _connectService.socket.delegate = self;
+
+    dispatch_queue_t queue = KKConnectSocketService.sharedInstance.socketQueue;
+    GCDAsyncSocket *socket = KKConnectSocketService.sharedInstance.socket;
     
-    if (_connectService.socket.isConnected) {
-        [self startHeartBeat];
+    if (_heartBeatTimer == nil) {
+        _heartBeatTimer = [KKGCDTimer scheduledTimerWithTimeInterval:5 queue:queue repeats:YES delay:0 accuracy:GCDTimerAccuracyNormal block:^{
+            if (socket.isConnected) {
+                [KKMessageService.sharedInstance sendMessageType:MSGTypeHeartBeat call:^(NSDictionary *resultDict, NSError *error) {
+                    
+                    if (error) {
+                        NSLog(@"L O N G: 心跳包回包错误");
+                    } else {
+                        NSLog(@"L O N G: %@", [resultDict ks_jsonString]);
+                    }
+                }];
+                NSLog(@"L O N G: 发送心跳包");
+            }
+        }];
     }
 }
-
-- (void)startHeartBeat
-{
-    if (!_heartBeatQueue) {
-        _heartBeatQueue = dispatch_queue_create("com.kesen.client.tcp.socket.heart_beat", DISPATCH_QUEUE_SERIAL);
-    }
-    _heartBeatTimer = [KKGCDTimer scheduledTimerWithTimeInterval:5 queue:_heartBeatQueue repeats:YES delay:0 accuracy:GCDTimerAccuracyNormal block:^{
-        NSLog(@"发送心跳包");
-        Message *heartPackage = [MessageHandle buildHeatPackageWithAccount:@"18811112222"];
-        [_connectService.socket writeData:heartPackage.data withTimeout:-1 tag:kTcpTag];
-    }];
-}
-
-- (NSData *)buildHeartbeartPackage {
-    return nil;
-}
-
-# pragma mark - <GCDAsyncSocketDelegate>
-
 
 @end

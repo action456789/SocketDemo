@@ -8,9 +8,14 @@
 
 #import "KKConnectSocketService.h"
 #import "KKGCDTimer.h"
+#import "Message.pb.h"
+#import "MessageHandle.h"
+#import "NSDictionary+KS.h"
+#import "KKMessageService.h"
 
-#define kRetryCount 30
+#define kRetryCount 5
 #define kConnectTimeout 10
+#define kTcpTag 1
 
 @interface KKConnectSocketService() <GCDAsyncSocketDelegate>
 
@@ -20,28 +25,31 @@
     NSString *_ipAddr;
     int _port;
     
-    dispatch_queue_t _socketQueue;
     dispatch_semaphore_t _socketWriteSemaphore;
     
     NSUInteger _reconnectCount;
     
     NSOperationQueue *_currentOprationQueue;
-    
 }
+
+singleton_implementation(KKConnectSocketService)
 
 - (instancetype)init
 {
-    self = [super init];
-    if (self) {
-        _port = 5555;
-        _ipAddr = @"127.0.0.1";
-//        _ipAddr = @"172.168.1.103";
-        
-        _socketWriteSemaphore = dispatch_semaphore_create(0);
-        _socketQueue = dispatch_queue_create("com.kesen.longConnection", DISPATCH_QUEUE_SERIAL);
-        _reconnectCount = 0;
-    }
-    return self;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _instance = [super init];
+        if (_instance) {
+            _port = 5555;
+            _ipAddr = @"127.0.0.1";
+            //        _ipAddr = @"172.168.1.103";
+            
+            _socketWriteSemaphore = dispatch_semaphore_create(0);
+            _socketQueue = dispatch_queue_create("com.kesen.longConnection", DISPATCH_QUEUE_SERIAL);
+            _reconnectCount = 0;
+        }
+    });
+    return _instance;
 }
 
 - (BOOL)connectSocket {
@@ -77,7 +85,7 @@
         NSLog(@"L O N G: reconnect : %ld times", (long)_reconnectCount);
         
         [self connect];
-        sleep(1);
+        sleep(3);
         
         if (_socket.isConnected) {
             return YES;
@@ -118,14 +126,59 @@
     dispatch_semaphore_signal(_socketWriteSemaphore);
     
     if (_reconnectCount == -1) { // 掉线
-        if (self.delegate && [self.delegate respondsToSelector:@selector(connectSocketOffline)]) {
-            [self.delegate connectSocketOffline];
-        }
-        
         [_currentOprationQueue addOperationWithBlock:^{ // 重连
             [self reconnect];
         }];
     }
 }
 
+- (void)socket:(GCDAsyncSocket *)sock didWriteDataWithTag:(long)tag {
+    [sock readDataWithTimeout:-1 tag:tag];
+}
+
+- (void)socket:(GCDAsyncSocket *)sock didReadData:(NSData *)data withTag:(long)tag {
+    [sock readDataWithTimeout:-1 tag:tag];
+    
+    Message *message = [Message parseFromData:data];
+    [self responseMessage:message];
+}
+
+- (void)responseMessage:(Message *)msg {
+//    switch (msg.messageType) {
+//        case MSGTypeHeartBeat: {// 心跳
+//            NSLog(@"recieve: heart beat");
+//
+//            break;
+//        }
+//            
+//        case MSGTypePlayMedioResponse: { // 播放媒体响应
+////            if (_playMedioResult) {
+////                NSDictionary *dict = [NSDictionary ks_dictionaryFromString:msg.body];
+////                _playMedioResult(dict);
+////            }
+//            
+//            break;
+//        }
+//            
+//        case MSGTypeString: {
+//            NSLog(@"收到字符串消息:%@", msg.header);
+//        }
+//            
+//        default:
+//            break;
+//    }
+    KK_ThreadSafeDictionary *dict = KKMessageService.sharedInstance.hasBeenSendMsgDict;
+    for (NSString *key in dict) {
+        KKMsg *value = (KKMsg *)dict[key];
+        if ([msg.messageId isEqualToString:key]) {
+            NSDictionary *dict = [NSDictionary ks_dictionaryFromString:msg.body];
+            value.timeout = NO;
+            if (value.callback) {
+                value.callback(dict, nil);
+            }
+            break;
+        }
+        
+    }
+}
 @end

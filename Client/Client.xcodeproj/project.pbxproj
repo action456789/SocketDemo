@@ -21,12 +21,11 @@
 		10B326BA1D2F38C500EE7ACF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10B326B81D2F38C500EE7ACF /* LaunchScreen.storyboard */; };
 		2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */; };
 		2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */; };
-		2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */; };
+		2E15E7A81E4C38DB005DBAF6 /* KKMessageService.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7A71E4C38DB005DBAF6 /* KKMessageService.m */; };
 		2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */; };
 		2E942C161E4EB99200B15BCA /* KK_ThreadSafeDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E942C151E4EB99200B15BCA /* KK_ThreadSafeDictionary.m */; };
 		6B3276D954E00708901EC431 /* libPods-Client.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3361BDD564BEF00567B370E2 /* libPods-Client.a */; };
 		81C439AB1E979F11003487D1 /* KKHeartBeatService.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C439AA1E979F11003487D1 /* KKHeartBeatService.m */; };
-		81C439AF1E97AA0B003487D1 /* KKMsgMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 81C439AE1E97AA0B003487D1 /* KKMsgMonitor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,8 +55,8 @@
 		2E15E79A1E4C2521005DBAF6 /* KKConnectSocketService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKConnectSocketService.m; sourceTree = "<group>"; };
 		2E15E7A31E4C36FD005DBAF6 /* KK_ThreadSafeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KK_ThreadSafeArray.h; sourceTree = "<group>"; };
 		2E15E7A41E4C36FD005DBAF6 /* KK_ThreadSafeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KK_ThreadSafeArray.m; sourceTree = "<group>"; };
-		2E15E7A61E4C38DB005DBAF6 /* KKMessageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMessageManager.h; sourceTree = "<group>"; };
-		2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMessageManager.m; sourceTree = "<group>"; };
+		2E15E7A61E4C38DB005DBAF6 /* KKMessageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMessageService.h; sourceTree = "<group>"; };
+		2E15E7A71E4C38DB005DBAF6 /* KKMessageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMessageService.m; sourceTree = "<group>"; };
 		2E15E7A91E4C3972005DBAF6 /* KKMsg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMsg.h; sourceTree = "<group>"; };
 		2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMsg.m; sourceTree = "<group>"; };
 		2E942C141E4EB99200B15BCA /* KK_ThreadSafeDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KK_ThreadSafeDictionary.h; sourceTree = "<group>"; };
@@ -66,8 +65,6 @@
 		60860B24AFF369A898403CD6 /* Pods-Client.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.release.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.release.xcconfig"; sourceTree = "<group>"; };
 		81C439A91E979F11003487D1 /* KKHeartBeatService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKHeartBeatService.h; sourceTree = "<group>"; };
 		81C439AA1E979F11003487D1 /* KKHeartBeatService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKHeartBeatService.m; sourceTree = "<group>"; };
-		81C439AD1E97AA0B003487D1 /* KKMsgMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KKMsgMonitor.h; sourceTree = "<group>"; };
-		81C439AE1E97AA0B003487D1 /* KKMsgMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KKMsgMonitor.m; sourceTree = "<group>"; };
 		B98D6A9392547D73FFEF65EB /* Pods-Client.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Client.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Client/Pods-Client.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -188,7 +185,6 @@
 		2E15E7971E4C2521005DBAF6 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				81C439AC1E97AA00003487D1 /* MsgMonitor */,
 				2E15E79D1E4C2521005DBAF6 /* MsgSender */,
 				2E15E7981E4C2521005DBAF6 /* ConnectManager */,
 			);
@@ -209,21 +205,12 @@
 		2E15E79D1E4C2521005DBAF6 /* MsgSender */ = {
 			isa = PBXGroup;
 			children = (
-				2E15E7A61E4C38DB005DBAF6 /* KKMessageManager.h */,
-				2E15E7A71E4C38DB005DBAF6 /* KKMessageManager.m */,
+				2E15E7A61E4C38DB005DBAF6 /* KKMessageService.h */,
+				2E15E7A71E4C38DB005DBAF6 /* KKMessageService.m */,
 				2E15E7A91E4C3972005DBAF6 /* KKMsg.h */,
 				2E15E7AA1E4C3972005DBAF6 /* KKMsg.m */,
 			);
 			path = MsgSender;
-			sourceTree = "<group>";
-		};
-		81C439AC1E97AA00003487D1 /* MsgMonitor */ = {
-			isa = PBXGroup;
-			children = (
-				81C439AD1E97AA0B003487D1 /* KKMsgMonitor.h */,
-				81C439AE1E97AA0B003487D1 /* KKMsgMonitor.m */,
-			);
-			path = MsgMonitor;
 			sourceTree = "<group>";
 		};
 		97839C4D5743979860AAFA9C /* Frameworks */ = {
@@ -263,7 +250,7 @@
 		10B3269F1D2F38C400EE7ACF /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = SenKe;
 				TargetAttributes = {
 					10B326A61D2F38C400EE7ACF = {
@@ -361,13 +348,12 @@
 				1067598F1D588E3C00956128 /* Message.pb.m in Sources */,
 				2E15E79E1E4C2521005DBAF6 /* KKConnectSocketService.m in Sources */,
 				1097CDE01D91100D006E6A3A /* TCPConnectHandle.m in Sources */,
-				81C439AF1E97AA0B003487D1 /* KKMsgMonitor.m in Sources */,
 				2E942C161E4EB99200B15BCA /* KK_ThreadSafeDictionary.m in Sources */,
 				10B326B21D2F38C500EE7ACF /* ViewController.m in Sources */,
 				10B326AF1D2F38C500EE7ACF /* AppDelegate.m in Sources */,
 				2E15E7AB1E4C3972005DBAF6 /* KKMsg.m in Sources */,
 				81C439AB1E979F11003487D1 /* KKHeartBeatService.m in Sources */,
-				2E15E7A81E4C38DB005DBAF6 /* KKMessageManager.m in Sources */,
+				2E15E7A81E4C38DB005DBAF6 /* KKMessageService.m in Sources */,
 				2E15E7A51E4C36FD005DBAF6 /* KK_ThreadSafeArray.m in Sources */,
 				1097CDDD1D910995006E6A3A /* KKGCDTimer.m in Sources */,
 				10B326AC1D2F38C400EE7ACF /* main.m in Sources */,
@@ -411,8 +397,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -455,8 +443,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

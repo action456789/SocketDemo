@@ -12,24 +12,24 @@
 #import "TCPConnectHandle.h"
 #import "KKConnectSocketService.h"
 #import "KKHeartBeatService.h"
+#import "KKMessageService.h"
+#import "NSDictionary+KS.h"
 
-@interface ViewController () <KKConnectSocketServiceDelegate>
+@interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
 @end
 
-@implementation ViewController {
-    KKConnectSocketService *_connectService;
-}
+@implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    _connectService = [[KKConnectSocketService alloc] init];
-    _connectService.delegate = self;
-    if ([_connectService connectSocket]) {
-        KKHeartBeatService *heartBeatService = [KKHeartBeatService new];
-        [heartBeatService start];
+    
+    //TODO: 连接时会卡死主线程
+    
+    if ([KKConnectSocketService.sharedInstance connectSocket]) {
+        [KKHeartBeatService.sharedInstance start];
     }
 }
 
@@ -51,6 +51,16 @@
     [[TCPConnectHandle sharedInstance] sendPlayMedioRequestWithReslut:^(NSDictionary *resultDict) {
         [self addText:[NSString stringWithFormat:@"play medio - [成功],  %d", [resultDict[@"success"] boolValue]]];
     }];
+}
+- (IBAction)testSendData:(id)sender {
+    [KKMessageService.sharedInstance sendMessageType:MSGTypeHeartBeat call:^(NSDictionary *resultDict, NSError *error) {
+        if (error) {
+            NSLog(@"L O N G: 心跳包回包错误");
+        } else {
+            NSLog(@"L O N G: %@", [resultDict ks_jsonString]);
+        }
+    }];
+    NSLog(@"L O N G: 发送心跳包");
 }
 
 @end

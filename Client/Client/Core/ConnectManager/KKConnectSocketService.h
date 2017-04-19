@@ -8,17 +8,14 @@
 
 #import <Foundation/Foundation.h>
 #import <GCDAsyncSocket.h>
-@class KKConnectSocketService;
-
-@protocol KKConnectSocketServiceDelegate <NSObject>
-@optional;
-- (void)connectSocketOffline;
-@end
+#import "Singleton.h"
 
 @interface KKConnectSocketService : NSObject
 
+singleton_interface(KKConnectSocketService)
+
 @property (nonatomic, strong, readonly) GCDAsyncSocket  *socket;
-@property (nonatomic,weak) id <KKConnectSocketServiceDelegate> delegate;
+@property (nonatomic, strong, readonly) dispatch_queue_t socketQueue;
 
 - (BOOL)connectSocket;
 

@@ -13,6 +13,8 @@
 
 @implementation MessageHandle
 
+// heartbeat
+
 + (Message *)buildHeatPackageWithAccount:(NSString *)account
 {
     MessageBuilder *builder = [Message builder];
@@ -31,6 +33,25 @@
     return msg;
 }
 
++ (Message *)buildHeatPackageResponseWithAcount:(NSString *)account msgId:(NSString *)msgId {
+    MessageBuilder *builder = [Message builder];
+    builder.messageType = MSGTypeHeartBeat;
+    builder.version = KMessageVersion;
+    builder.header = @"";
+    builder.messageId = msgId;
+    
+    if (kValidate(account)) {
+        NSDictionary *dict = @{@"account": account};
+        builder.body = [dict ks_jsonString];
+    }
+    
+    Message *msg = [builder build];
+    
+    return msg;
+}
+
+// play medio
+
 + (Message *)buildPlayMedioRequestPackage
 {
     MessageBuilder *builder = [Message builder];
@@ -44,19 +65,20 @@
     return msg;
 }
 
-+ (Message *)buildPlayMedioResponsePackage:(NSDictionary *)dict
-{
++ (Message *)buildPlayMedioResponsePackage:(NSDictionary *)dict msgId:(NSString *)msgId {
     MessageBuilder *builder = [Message builder];
     builder.messageType = MSGTypePlayMedioResponse;
-    builder.messageId = [self createMessageId];
     builder.version = KMessageVersion;
     builder.header = @"";
     builder.body = [dict ks_jsonString];
+    builder.messageId = msgId;
     
     Message *msg = [builder build];
     
     return msg;
 }
+
+// string
 
 + (Message *)buildString:(NSString *)string
 {

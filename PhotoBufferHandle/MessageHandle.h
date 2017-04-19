@@ -32,9 +32,10 @@ typedef NS_ENUM(NSUInteger, MSGID) {
 @interface MessageHandle : NSObject
 
 + (Message *)buildHeatPackageWithAccount:(NSString *)account;
++ (Message *)buildHeatPackageResponseWithAcount:(NSString *)account msgId:(NSString *)msgId;
 
 + (Message *)buildPlayMedioRequestPackage;
-+ (Message *)buildPlayMedioResponsePackage:(NSDictionary *)dict;
++ (Message *)buildPlayMedioResponsePackage:(NSDictionary *)dict msgId:(NSString *)msgId;
 
 + (Message *)buildString:(NSString *)string;
 

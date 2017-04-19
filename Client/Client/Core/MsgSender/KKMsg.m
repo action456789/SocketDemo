@@ -29,10 +29,11 @@
 
 - (instancetype)initWithMessage:(Message *)message {
     KKMsg *msg = [KKMsg new];
-    msg.msgId = [self createMsgId];
+    msg.msgId = message.messageId;
     msg.msgBody = message;
     msg.sendTimestamp = [[NSDate date] timeIntervalSince1970];
     msg.callback = nil;
+    msg.timeout = YES;
     return msg;
 }
 
