@@ -85,7 +85,7 @@ singleton_implementation(KKConnectSocketService)
         NSLog(@"L O N G: reconnect : %ld times", (long)_reconnectCount);
         
         [self connect];
-        sleep(3);
+        [NSThread sleepForTimeInterval:3];
         
         if (_socket.isConnected) {
             return YES;
@@ -175,10 +175,10 @@ singleton_implementation(KKConnectSocketService)
             value.timeout = NO;
             if (value.callback) {
                 value.callback(dict, nil);
+                NSLog(@"L O N G: id:%@ 执行成功", msg.messageId);
             }
             break;
         }
-        
     }
 }
 @end

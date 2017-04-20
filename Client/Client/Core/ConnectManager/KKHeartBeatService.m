@@ -34,14 +34,12 @@ singleton_implementation(KKHeartBeatService)
         _heartBeatTimer = [KKGCDTimer scheduledTimerWithTimeInterval:5 queue:queue repeats:YES delay:0 accuracy:GCDTimerAccuracyNormal block:^{
             if (socket.isConnected) {
                 [KKMessageService.sharedInstance sendMessageType:MSGTypeHeartBeat call:^(NSDictionary *resultDict, NSError *error) {
-                    
                     if (error) {
-                        NSLog(@"L O N G: 心跳包回包错误");
+                        NSLog(@"L O N G: %@", error.description);
                     } else {
                         NSLog(@"L O N G: %@", [resultDict ks_jsonString]);
                     }
                 }];
-                NSLog(@"L O N G: 发送心跳包");
             }
         }];
     }

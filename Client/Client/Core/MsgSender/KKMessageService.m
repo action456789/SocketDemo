@@ -42,7 +42,7 @@ singleton_implementation(KKMessageService)
             NSMutableArray *successMsgKeys = [NSMutableArray array];
             NSMutableArray *failedMsgKeys = [NSMutableArray array];
             
-            _monitorTimer = [KKGCDTimer scheduledTimerWithTimeInterval:kTimeout queue:queue repeats:YES delay:kTimeout accuracy:GCDTimerAccuracyBest block:^{
+            _monitorTimer = [KKGCDTimer scheduledTimerWithTimeInterval:5 queue:queue repeats:YES delay:10 accuracy:GCDTimerAccuracyBest block:^{
                 
                 for (NSString *key in self.hasBeenSendMsgDict) {
                     KKMsg *value = (KKMsg *)self.hasBeenSendMsgDict[key];
@@ -53,7 +53,9 @@ singleton_implementation(KKMessageService)
                     if (value.timeout == NO) {
                         [successMsgKeys addObject:key];
                     } else if (timeFlies > kTimeout) { // 超时
-                        NSDictionary *userInfo = @{@"L O N G": @"访问超时"};
+                        NSDictionary *userInfo = @{@"L O N G": @"访问超时",
+                                                   @"msg id": value.msgId
+                                                   };
                         NSError *domainError = [NSError errorWithDomain:@"L o n g" code:0 userInfo:userInfo];
                         value.callback(nil, domainError);
                         [failedMsgKeys addObject:key];
@@ -91,6 +93,8 @@ singleton_implementation(KKMessageService)
     
     KKMsg *msg = [[KKMsg alloc] initWithMessage:message];
     msg.callback = callback;
+    
+    NSLog(@"L O N G: id:%@ 包已发送", msg.msgId);
     
     [_socket writeData:msg.msgBody.data withTimeout:-1 tag:1];
     

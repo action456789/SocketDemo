@@ -28,6 +28,7 @@
     
     //TODO: 连接时会卡死主线程
     
+    // connect 操作在主线程执行
     if ([KKConnectSocketService.sharedInstance connectSocket]) {
         [KKHeartBeatService.sharedInstance start];
     }
@@ -53,14 +54,13 @@
     }];
 }
 - (IBAction)testSendData:(id)sender {
-    [KKMessageService.sharedInstance sendMessageType:MSGTypeHeartBeat call:^(NSDictionary *resultDict, NSError *error) {
+    [KKMessageService.sharedInstance sendMessageType:MSGTypePlayMedioRequest call:^(NSDictionary *resultDict, NSError *error) {
         if (error) {
-            NSLog(@"L O N G: 心跳包回包错误");
+            NSLog(@"L O N G: %@", error.description);
         } else {
             NSLog(@"L O N G: %@", [resultDict ks_jsonString]);
         }
     }];
-    NSLog(@"L O N G: 发送心跳包");
 }
 
 @end
