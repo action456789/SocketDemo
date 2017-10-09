@@ -51,12 +51,6 @@ singleton_implementation(TCPConnectHandle);
     if (self) {
         [self initSocket];
         _reconnectCount = 0;
-        
-        [NSTimer scheduledTimerWithTimeInterval:1.0 repeats:YES block:^(NSTimer * _Nonnull timer) {
-            if (_socket) {
-                NSLog(@"%d", _socket.isConnected);
-            }
-        }];
     }
     return self;
 }

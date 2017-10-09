@@ -48,7 +48,7 @@ singleton_implementation(KKMessageService)
                     KKMsg *value = (KKMsg *)self.hasBeenSendMsgDict[key];
                     
                     // 相差的时间，单位： 秒
-                    NSTimeInterval timeFlies = [[NSDate date] timeIntervalSince1970] - value.sendTimestamp;
+                    NSTimeInterval timeFlies = CFAbsoluteTimeGetCurrent() - value.sendTimestamp;
 
                     if (value.timeout == NO) {
                         [successMsgKeys addObject:key];

@@ -31,7 +31,7 @@
     KKMsg *msg = [KKMsg new];
     msg.msgId = message.messageId;
     msg.msgBody = message;
-    msg.sendTimestamp = [[NSDate date] timeIntervalSince1970];
+    msg.sendTimestamp = CFAbsoluteTimeGetCurrent();
     msg.callback = nil;
     msg.timeout = YES;
     return msg;

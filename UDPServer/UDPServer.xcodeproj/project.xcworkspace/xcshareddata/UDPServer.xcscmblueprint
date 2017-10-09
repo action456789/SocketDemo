@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "1B24A059E5A0DC3B3F541772685FB3AD505F657E",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "7F19421EFB08B6A9182E68D7AE3800E2A7F82E97" : 9223372036854775807,
+    "1B24A059E5A0DC3B3F541772685FB3AD505F657E" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DA5476A1-1A9C-40F7-812F-8A880B9E5C55",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7F19421EFB08B6A9182E68D7AE3800E2A7F82E97" : "RICISmartSwift\/",
+    "1B24A059E5A0DC3B3F541772685FB3AD505F657E" : "SocketDemo\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "UDPServer",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "UDPServer\/UDPServer.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/action456789\/SocketDemo.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "1B24A059E5A0DC3B3F541772685FB3AD505F657E"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/git.coding.net\/action456789\/RiCiSmartSwift.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7F19421EFB08B6A9182E68D7AE3800E2A7F82E97"
+    }
+  ]
+}
