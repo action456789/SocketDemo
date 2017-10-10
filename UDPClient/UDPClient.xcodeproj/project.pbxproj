@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		81437ADC1F8B705F00B27EB0 /* GCDAsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 81437AD81F8B703900B27EB0 /* GCDAsyncSocket.m */; };
 		81437ADE1F8B705F00B27EB0 /* GCDAsyncUdpSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = 81437ADA1F8B703900B27EB0 /* GCDAsyncUdpSocket.m */; };
+		81437BDC1F8C75AC00B27EB0 /* KKUDPServer.h in Sources */ = {isa = PBXBuildFile; fileRef = 81437BDA1F8C75A500B27EB0 /* KKUDPServer.h */; };
+		81437BDD1F8C75AC00B27EB0 /* KKUDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81437BDB1F8C75A500B27EB0 /* KKUDPServer.m */; };
 		8162060B1F3D9ED000F3DA9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8162060A1F3D9ED000F3DA9A /* main.m */; };
 		8162060E1F3D9ED000F3DA9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8162060D1F3D9ED000F3DA9A /* AppDelegate.m */; };
 		816206111F3D9ED000F3DA9A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 816206101F3D9ED000F3DA9A /* ViewController.m */; };
@@ -22,6 +24,8 @@
 		81437AD81F8B703900B27EB0 /* GCDAsyncSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncSocket.m; sourceTree = "<group>"; };
 		81437AD91F8B703900B27EB0 /* GCDAsyncUdpSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GCDAsyncUdpSocket.h; sourceTree = "<group>"; };
 		81437ADA1F8B703900B27EB0 /* GCDAsyncUdpSocket.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GCDAsyncUdpSocket.m; sourceTree = "<group>"; };
+		81437BDA1F8C75A500B27EB0 /* KKUDPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUDPServer.h; sourceTree = "<group>"; };
+		81437BDB1F8C75A500B27EB0 /* KKUDPServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUDPServer.m; sourceTree = "<group>"; };
 		816206061F3D9ED000F3DA9A /* UDPClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDPClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8162060A1F3D9ED000F3DA9A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8162060C1F3D9ED000F3DA9A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -56,6 +60,16 @@
 			path = GCD;
 			sourceTree = "<group>";
 		};
+		81437BD91F8C75A500B27EB0 /* UDPUtils */ = {
+			isa = PBXGroup;
+			children = (
+				81437BDA1F8C75A500B27EB0 /* KKUDPServer.h */,
+				81437BDB1F8C75A500B27EB0 /* KKUDPServer.m */,
+			);
+			name = UDPUtils;
+			path = ../../UDPUtils;
+			sourceTree = "<group>";
+		};
 		816205FD1F3D9ED000F3DA9A = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +89,7 @@
 		816206081F3D9ED000F3DA9A /* UDPClient */ = {
 			isa = PBXGroup;
 			children = (
+				81437BD91F8C75A500B27EB0 /* UDPUtils */,
 				81437AD61F8B703900B27EB0 /* GCD */,
 				8162060C1F3D9ED000F3DA9A /* AppDelegate.h */,
 				8162060D1F3D9ED000F3DA9A /* AppDelegate.m */,
@@ -169,6 +184,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81437BDC1F8C75AC00B27EB0 /* KKUDPServer.h in Sources */,
+				81437BDD1F8C75AC00B27EB0 /* KKUDPServer.m in Sources */,
 				81437ADC1F8B705F00B27EB0 /* GCDAsyncSocket.m in Sources */,
 				81437ADE1F8B705F00B27EB0 /* GCDAsyncUdpSocket.m in Sources */,
 				816206111F3D9ED000F3DA9A /* ViewController.m in Sources */,

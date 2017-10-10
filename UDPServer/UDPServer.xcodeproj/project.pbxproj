@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		81437BD71F8C758600B27EB0 /* KKUDPServer.h in Sources */ = {isa = PBXBuildFile; fileRef = 81437BD51F8C756F00B27EB0 /* KKUDPServer.h */; };
+		81437BD81F8C758600B27EB0 /* KKUDPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 81437BD61F8C756F00B27EB0 /* KKUDPServer.m */; };
 		81504A551F3D976600C96261 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 81504A541F3D976600C96261 /* AppDelegate.m */; };
 		81504A581F3D976600C96261 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 81504A571F3D976600C96261 /* main.m */; };
 		81504A5B1F3D976600C96261 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 81504A5A1F3D976600C96261 /* ViewController.m */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		81437BD51F8C756F00B27EB0 /* KKUDPServer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KKUDPServer.h; sourceTree = "<group>"; };
+		81437BD61F8C756F00B27EB0 /* KKUDPServer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KKUDPServer.m; sourceTree = "<group>"; };
 		81504A501F3D976600C96261 /* UDPServer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UDPServer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81504A531F3D976600C96261 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		81504A541F3D976600C96261 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,6 +47,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		81437BD41F8C756F00B27EB0 /* UDPUtils */ = {
+			isa = PBXGroup;
+			children = (
+				81437BD51F8C756F00B27EB0 /* KKUDPServer.h */,
+				81437BD61F8C756F00B27EB0 /* KKUDPServer.m */,
+			);
+			name = UDPUtils;
+			path = ../../UDPUtils;
+			sourceTree = "<group>";
+		};
 		81504A471F3D976600C96261 = {
 			isa = PBXGroup;
 			children = (
@@ -62,6 +76,7 @@
 		81504A521F3D976600C96261 /* UDPServer */ = {
 			isa = PBXGroup;
 			children = (
+				81437BD41F8C756F00B27EB0 /* UDPUtils */,
 				81504A6F1F3D987500C96261 /* GCD */,
 				81504A531F3D976600C96261 /* AppDelegate.h */,
 				81504A541F3D976600C96261 /* AppDelegate.m */,
@@ -121,7 +136,7 @@
 		81504A481F3D976600C96261 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = sen.ke;
 				TargetAttributes = {
 					81504A4F1F3D976600C96261 = {
@@ -166,6 +181,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81437BD71F8C758600B27EB0 /* KKUDPServer.h in Sources */,
+				81437BD81F8C758600B27EB0 /* KKUDPServer.m in Sources */,
 				81504A701F3D987500C96261 /* GCDAsyncSocket.m in Sources */,
 				81504A711F3D987500C96261 /* GCDAsyncUdpSocket.m in Sources */,
 				81504A5B1F3D976600C96261 /* ViewController.m in Sources */,
@@ -198,7 +215,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -206,7 +225,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -246,7 +269,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -254,7 +279,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -322,6 +351,7 @@
 				81504A661F3D976600C96261 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
