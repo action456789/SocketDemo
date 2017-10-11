@@ -70,6 +70,8 @@
 
 - (void)stopListening {
     [_udpSocket close];
+    [_udpSocket setDelegate:nil delegateQueue:[_udpSocket delegateQueue]];
+    _udpSocket = nil;
 }
 
 - (void)startScanningPort:(int16_t)port {
